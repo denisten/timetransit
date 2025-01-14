@@ -1,0 +1,271 @@
+.container{
+    position: relative;
+}
+
+.pageTitle{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+.slider{
+    width: 700px;
+}
+
+.title{
+    font-weight: 600;
+    font-size: 64px;
+    color: #a62226;
+    margin-top: 230px;
+}
+
+.text{
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 50px;
+    color: #000;
+    max-width: 1500px;
+    margin: 30px 0 70px 0
+}
+
+.imgTruck{
+    width: 635px;
+    height: 585px;
+}
+
+.warehouse {
+    height: 1490px;
+}
+
+.containerTextAndImg{
+    display: flex;
+    flex-direction: row;
+    margin-right: 100px;
+}
+
+.containerImgAndText{
+    display: flex;
+    flex-direction: row;
+    margin-left: 100px;
+}
+
+.textAndImg{
+    font-weight: 400;
+    font-size: 33px;
+    line-height: 65px;
+    text-align: justify;
+    color: #000;
+    margin: 0 100px 0 100px;
+}
+
+.imgAndText{
+    font-weight: 400;
+    font-size: 33px;
+    line-height: 62px;
+    text-align: justify;
+    color: #000;
+    margin: 0 100px 0 100px;
+}
+
+@media (max-width: 1440px) {
+    .title{
+        font-size: 56px;
+        margin-top: 180px;
+    }
+
+    .text{
+        font-size: 30px;
+        line-height: 50px;
+        max-width: 1000px;
+        margin: 30px 0 70px 0
+
+    }
+
+    .imgTruck{
+        width: 635px;
+        height: 567px;
+    }
+
+    .warehouse {
+        height: 1537px;
+    }
+
+    .textAndImg{
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 47px;
+    }
+
+    .imgAndText{
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 45px;
+        margin: 0 90px;
+    }
+}
+
+@media (max-width: 1080px) {
+    .slider{
+        width: 500px;
+    }
+
+    .title{
+        font-size: 40px;
+        margin-top: 180px;
+    }
+
+    .text{
+        font-size: 26px;
+        line-height: 50px;
+        max-width: 900px;
+    }
+
+    .containerTextAndImg{
+        margin-right: 50px;
+    }
+
+    .containerImgAndText{
+        margin-left: 50px;
+    }
+
+    .imgTruck{
+        height: 400px;
+        padding-top: 10px;
+    }
+
+    .warehouse {
+        height: 1050px;
+        padding-top: 10px;
+    }
+
+    .textAndImg{
+        font-size: 22px;
+        line-height: 38px;
+        margin: 0 50px;
+    }
+
+    .imgAndText{
+        font-size: 22px;
+        line-height: 33px;
+        margin: 0 30px;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .slider{
+        width: 500px;
+    }
+
+    .title{
+        font-size: 40px;
+        width: 550px;
+        margin-top: 170px;
+    }
+
+    .text{
+        font-size: 24px;
+        line-height: 40px;
+        max-width: 700px;
+        margin-top: 30px;
+        margin-bottom: 50px;
+    }
+
+    .imgTruck{
+        display: none;
+    }
+
+    .containerTextAndImg{
+        margin: 0;
+    }
+
+    .containerImgAndText{
+        margin: 0;
+    }
+
+    .warehouse{
+        display: none;
+    }
+
+    .textAndImg{
+        font-size: 22px;
+        line-height: 38px;
+        margin: 0 50px;
+    }
+
+    .imgAndText{
+        font-size: 22px;
+        line-height: 33px;
+        margin: 0 50px;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .slider{
+        width: 200px;
+    }
+
+    .title{
+        font-size: 24px;
+        width: 330px;
+        margin-top: 50px;
+    }
+
+    .text{
+        font-size: 16px;
+        line-height: 25px;
+        max-width: 420px;
+        margin-top: 20px;
+        margin-bottom: 40px;
+    }
+
+    .textAndImg{
+        font-size: 16px;
+        line-height: 25px;
+        margin: 0 30px;
+    }
+
+    .imgAndText{
+        font-size: 16px;
+        line-height: 25px;
+        margin: 0 30px;
+    }
+}
+
+
+@media (max-width: 320px) {
+    .slider{
+        width: 200px;
+    }
+
+    .title{
+        font-size: 18px;
+        width: 250px;
+        margin-top: 30px;
+    }
+
+    .text{
+        font-size: 14px;
+        line-height: 20px;
+        max-width: 280px;
+        margin-top: 10px;
+        margin-bottom: 30px;
+    }
+
+    .textAndImg{
+        font-size: 14px;
+        line-height: 25px;
+        margin: 0 30px;
+    }
+
+    .imgAndText{
+        font-size: 14px;
+        line-height: 25px;
+        margin: 0 30px;
+    }
+}
+
+

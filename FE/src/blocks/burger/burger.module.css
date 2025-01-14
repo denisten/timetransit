@@ -1,0 +1,95 @@
+.container{
+    position: relative;
+    width: 100vw;
+}
+
+
+.containerBtn{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
+    margin-top: 10px;
+}
+
+.containerTitle{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding-top: 150px;
+}
+
+.text{
+    font-weight: 700;
+    font-size: 30px;
+    color: #73080c;
+    text-align: left;
+    margin-left: 80px;
+}
+
+.button{
+    border-radius: 8px;
+    width: 287px;
+    height: 59px;
+    border: none;
+    background: #C3202B;
+    font-weight: 700;
+    font-size: 24px;
+    text-align: center;
+    color: #fff;
+    margin-left: 40px;
+}
+
+.draw{
+    position: absolute;
+    top: 200px;
+    right: 0;
+    z-index: -1;
+}
+
+.telegram{
+    z-index: 1;
+}
+
+@media (max-width: 480px){
+    .draw{
+        top: 220px;
+        right: 0;
+        z-index: -1;
+    }
+}
+
+@media (max-width: 320px){
+    .containerBtn{
+        gap: 30px;
+        margin-top: 10px;
+    }
+
+    .containerTitle{
+        gap: 20px;
+        padding-top: 100px;
+    }
+
+    .button{
+        width: 287px;
+        height: 50px;
+        font-size: 24px;
+        margin-left: 30px;
+    }
+
+    .text{
+        font-size: 22px;
+        margin-left: 60px;
+    }
+
+    .draw{
+        width: 240px;
+        top: 190px;
+        right: 0;
+        z-index: -1;
+    }
+
+    .telegram{
+        width: 75px;
+    }
+}

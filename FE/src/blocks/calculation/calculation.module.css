@@ -1,0 +1,430 @@
+.container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.title{
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    position: relative;
+    margin-bottom: 90px;
+}
+
+.titleBlack{
+    font-weight: 600;
+    font-size: 60px;
+    text-align: center;
+    color: #000;
+}
+
+.titleRed{
+    font-weight: 600;
+    font-size: 60px;
+    text-align: center;
+    color: #c3202b;
+}
+
+.img{
+    width: 700px;
+    height: 700px;
+    padding-left: 130px;
+}
+
+.back{
+    width: 400px;
+    height: 400px;
+    margin-top: 430px;
+    right: 0;
+    z-index: -1;
+    position: absolute;
+}
+
+.formContainer{
+    position: absolute;
+    top: 150px;
+    right: 160px;
+    display: flex;
+    flex-direction: column;
+    width: 700px;
+    gap: 60px;
+}
+
+.typesContainer {
+    display: flex;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+    border-color: #6C6C6C;
+    height: 100px;
+    justify-content: space-evenly;
+}
+
+.type {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    color: #000;
+    font-size: 36px;
+}
+
+.selected {
+    color: #C3202B;
+}
+
+.containerLine{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.lineTitle{
+    border-bottom: 2px solid #6c6c6c;
+    width: 730%;
+    margin-left: 100px;
+    text-align: center;
+}
+
+.lineInput{
+    border-bottom: 1px solid #6c6c6c;
+    text-align: center;
+    display: flex;
+    width: 600px;
+}
+
+.input{
+    font-weight: 400;
+    width: 150%;
+    font-size: 32px;
+    text-align: start;
+    align-content: center;
+    color: #000000;
+    border: none;
+    padding: 15px 40px 15px 40px;
+    z-index: 1;
+}
+
+input:focus {
+    outline: none;
+}
+
+.containerVertical{
+    display: flex;
+
+}
+
+.verticalLine{
+    border-radius: 100%;
+    fill: #d9d9d9;
+    /*rotate: 90deg;*/
+    width: 10px;
+    height: 100px;
+}
+
+.button{
+    width: 600px;
+    height: 64px;
+    background: #A62226;
+    border-radius: 10px;
+    stroke-width: 3px;
+    stroke: #a62226;
+    border: none;
+    color: white;
+    font-size: 30px;
+}
+
+.button:hover {
+    transform: translateY(-10px) scale(1.1);
+}
+
+
+@media (max-width: 1440px) {
+    .container {
+        height: 830px;
+    }
+
+
+    .button{
+        font-size: 32px;
+    }
+
+    .img{
+        width: 500px;
+        height: 500px;
+        padding-left: 80px;
+        margin-top: 50px;
+    }
+
+    .formContainer{
+        top: 150px;
+        right: 120px;
+        width: 700px;
+        gap: 50px;
+    }
+
+    .containerLine{
+        gap: 40px;
+    }
+
+    .lineInput{
+        width: 500px;
+    }
+
+    .back{
+        width: 400px;
+        height: 400px;
+        margin-top: 320px;
+    }
+}
+
+
+@media (max-width: 1080px) {
+    .titleBlack{
+        font-size: 50px;
+    }
+
+    .titleRed{
+        font-size: 50px;
+    }
+    .container {
+        height: 750px;
+    }
+
+    .button{
+        width: 480px;
+        height: 60px;
+        background: #A62226;
+        border-radius: 10px;
+        stroke-width: 3px;
+        stroke: #a62226;
+        border: none;
+        color: white;
+        font-size: 28px;
+    }
+
+    .img{
+        width: 400px;
+        height: 400px;
+        padding-left: 50px;
+    }
+
+    .typesContainer {
+        height: 90px;
+    }
+
+    .type {
+        padding: 20px;
+        font-size: 32px;
+    }
+
+    .formContainer{
+        top: 120px;
+        right: 100px;
+        width: 480px;
+        gap: 50px;
+    }
+
+    .containerLine{
+        gap: 30px;
+    }
+
+    .lineInput{
+        width: 477px;
+    }
+
+    .back{
+        display: none;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .button{
+        width: 480px;
+        height: 60px;
+        background: #A62226;
+        border-radius: 10px;
+        stroke-width: 3px;
+        stroke: #a62226;
+        border: none;
+        color: white;
+        font-size: 28px;
+    }
+
+    .title {
+        gap: 30px;
+        margin-bottom: 0px;
+    }
+
+    .titleBlack {
+        font-size: 40px;
+    }
+
+    .titleRed {
+        font-size: 40px;
+    }
+
+    .img {
+        display: none;
+    }
+
+    .back {
+        display: flex;
+        margin-top: 300px;
+    }
+
+    .formContainer {
+        top: 100px;
+        left: 40px;
+        width: 690px;
+        gap: 50px;
+    }
+
+    .lineTitle{
+        width: 300px;
+    }
+
+    .lineInput{
+        width: 450px;
+    }
+
+    .input{
+        font-weight: 400;
+        width: 400px;
+        font-size: 28px;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .container{
+        height: 580px;
+        margin-top: 50px;
+    }
+
+    .button{
+        width: 400px;
+        height: 60px;
+        font-size: 22px;
+    }
+
+    .title{
+        gap: 16px;
+        margin-bottom: 0;
+    }
+
+    .titleBlack{
+        font-size: 28px;
+    }
+
+    .titleRed{
+        font-size: 28px;
+    }
+
+    .back{
+        display: none;
+    }
+
+    .formContainer{
+        top: 80px;
+        right: 150px;
+        width: 400px;
+        gap: 40px;
+        left: 40px;
+    }
+
+    .typesContainer {
+        width: 400px;
+        height: 60px;
+    }
+
+    .type {
+        padding: 20px;
+        font-size: 22px;
+    }
+
+    .containerLine{
+        gap: 30px;
+    }
+
+    .lineTitle{
+        width: 400px;
+    }
+
+    .lineInput{
+        width: 400px;
+    }
+
+    .input{
+        width: 350px;
+        font-size: 22px;
+        padding: 10px 20px 10px 20px;
+    }
+}
+
+@media (max-width: 320px) {
+    .container{
+        margin: 0;
+        height: 420px;
+    }
+
+    .button{
+        width: 280px;
+        height: 40px;
+        font-size: 18px;
+    }
+
+    .title{
+        gap: 12px;
+        margin-bottom: 20px;
+    }
+
+    .titleBlack{
+        font-size: 22px;
+    }
+
+    .titleRed{
+        font-size: 22px;
+    }
+
+    .back{
+        display: none;
+    }
+
+    .formContainer{
+        width: 280px;
+        gap: 30px;
+        left: 15px;
+        top: 50px;
+    }
+
+    .typesContainer {
+        width: 280px;
+        height: 50px;
+    }
+
+    .type {
+        padding: 14px;
+        font-size: 18px;
+    }
+
+    .containerLine{
+        gap: 10px;
+    }
+
+    .lineTitle{
+        width: 90%;
+    }
+
+    .lineInput{
+        width: 100%;
+    }
+
+    .input{
+        width: 90%;
+        font-size: 16px;
+        padding: 10px 20px 10px 20px;
+    }
+}

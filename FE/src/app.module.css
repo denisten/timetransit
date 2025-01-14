@@ -1,0 +1,16 @@
+.App {
+    font-weight: 700;
+    font-size: 72px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: #5d534a;
+    width: 100vw;
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+}
+

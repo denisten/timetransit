@@ -1,0 +1,37 @@
+# docker-compose.yml
+version: "3.8"
+services:
+  backend:
+    env_file:
+      - .env
+    build:
+      context: ./BE
+    container_name: go_backend
+    ports:
+      - "8080:8080"
+    networks:
+      - web_net
+
+  frontend:
+    build:
+      context: ./FE
+    container_name: react_frontend
+    # Статический фронт будет доступен на 80 порту этого контейнера
+    networks:
+      - web_net
+
+  nginx:
+    build:
+      context: ./nginx
+    container_name: nginx_proxy
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+      - frontend
+    networks:
+      - web_net
+
+networks:
+  web_net:
+    driver: bridge

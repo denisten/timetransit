@@ -1,0 +1,340 @@
+.titleCompany{
+    font-weight: 600;
+    font-size: 60px;
+    text-align: center;
+    color: #c3202b;
+    width: 440px;
+    height: 90px;
+
+}
+
+.backCompany{
+    position: absolute;
+    width: 100vw;
+    height: 600px;
+    background: #c3202b;
+    margin-top: 330px;
+}
+
+.parentCompany{
+    margin-top: 50px;
+}
+
+.blockCompany{
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    height: 100%;
+    justify-content: center;
+    gap: 60px;
+    margin-top: 100px;
+}
+
+.plate{
+    border: 2px solid rgba(30, 30, 30, 0.3);
+    border-radius: 10px;
+    width: 38%;
+    height: 500px;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+    background: #fff;
+    position: relative;
+    transition: scale .3s;
+}
+
+.plate:hover {
+    scale: 1.1;
+}
+
+.plateTitle {
+    font-weight: 600;
+    font-size: 36px;
+    letter-spacing: 0.01em;
+    color: #fff;
+}
+
+.plateTitleContainerBlack {
+    height: 100px;
+    width: 340px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px 0 7px 0;
+}
+
+.plateTitleContainerRed {
+    height: 100px;
+    width: 340px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: #C3202B;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px 0 7px 0;
+}
+
+.export{
+    width: 400px;
+    height: 400px;
+}
+
+.import{
+    width: 480px;
+    height: 400px;
+}
+
+.key{
+    width: 430px;
+    height: 400px;
+}
+
+.knr{
+    width: 400px;
+    height: 300px;
+    padding-top: 30px;
+}
+
+.draw2{
+    width: 450px;
+    position: absolute;
+    right: 0;
+    z-index: -1;
+}
+
+
+@media (max-width: 1440px) {
+    .draw2{
+        width: 320px;
+        height: 280px;
+        position: absolute;
+        right: 0;
+        z-index: -1;
+    }
+}
+
+
+@media (max-width: 1080px) {
+    .titleCompany{
+        font-size: 50px;
+    }
+    .plate{
+        width: 38%;
+        height: 380px;
+    }
+
+    .plateTitleContainerBlack {
+        height: 70px;
+        width: 300px;
+    }
+
+    .plateTitleContainerRed {
+        height: 70px;
+        width: 300px;
+    }
+
+
+    .export{
+        width: 300px;
+        height: 300px;
+    }
+
+    .import{
+        width: 380px;
+        height: 300px;
+    }
+
+    .key{
+        width: 330px;
+        height: 300px;
+        padding-top: 10px;
+    }
+
+    .knr{
+        width: 300px;
+        height: 200px;
+        padding-top: 50px;
+    }
+
+    .draw2{
+        width: 250px;
+        height: 220px;
+    }
+
+    .backCompany{
+        height: 400px;
+    }
+
+    .blockCompany{
+        margin-top: 50px;
+        gap: 30px;
+    }
+
+    .draw2{
+        width: 220px;
+        height: 210px;
+    }
+}
+
+@media (max-width: 768px) {
+    .plateTitleContainerBlack {
+        height: 70px;
+        width: 350px;
+    }
+
+    .plateTitleContainerRed {
+        height: 70px;
+        width: 350px;
+    }
+
+    .titleCompany{
+        font-size: 40px;
+    }
+
+    .blockCompany{
+        flex-direction: column;
+        align-content: center;
+        height: 100%;
+        gap: 30px;
+        margin: 50px 50px;
+    }
+
+    .plate{
+        width: 85%;
+    }
+
+    .plateTitle {
+        font-size: 32px;
+    }
+
+    .draw2{
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .titleCompany {
+        font-size: 28px;
+    }
+
+    .plate {
+        width: 103%;
+        height: 300px;
+    }
+
+    .plateTitle {
+        font-size: 28px;
+    }
+
+    .backCompany{
+        width: 100vw;
+        height: 600px;
+    }
+
+    /*.parentCompany{*/
+    /*    margin-top: 50px;*/
+    /*}*/
+
+    .blockCompany{
+        height: 100%;
+        gap: 30px;
+        margin: 50px 50px;
+    }
+
+    .plateTitleContainerBlack {
+        height: 60px;
+        width: 250px;
+    }
+
+    .plateTitleContainerRed {
+        height: 60px;
+        width: 250px;
+    }
+
+    .export{
+        width: 220px;
+        height: 220px;
+        padding-top: 10px;
+    }
+
+    .import{
+        width: 260px;
+        height: 220px;
+    }
+
+    .key{
+        width: 270px;
+        height: 240px;
+    }
+
+    .knr{
+        width: 200px;
+        height: 150px;
+        padding-top: 40px;
+    }
+
+    .draw2{
+        width: 130px;
+        height: 90px;
+    }
+}
+
+@media (max-width: 320px) {
+    .blockCompany{
+        margin: 30px 30px;
+        gap: 20px;
+    }
+    .titleCompany {
+        font-size: 22px;
+    }
+
+    .plate {
+        width: 99%;
+        height: 220px;
+    }
+
+    .plateTitle {
+        font-size: 20px;
+    }
+
+    .plateTitleContainerBlack {
+        height: 50px;
+        width: 180px;
+    }
+
+    .plateTitleContainerRed {
+        height: 50px;
+        width: 180px;
+    }
+
+    .export{
+        width: 150px;
+        height: 150px;
+    }
+
+    .import{
+        width: 180px;
+        height: 150px;
+    }
+
+    .key{
+        width: 200px;
+        height: 180px;
+    }
+
+    .knr{
+        width: 170px;
+        height: 110px;
+        padding-top: 30px;
+    }
+
+    .draw2{
+        position: absolute;
+        right: 0;
+        z-index: -1;
+    }
+}

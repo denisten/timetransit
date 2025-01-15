@@ -22,13 +22,13 @@ const App = () => {
       <ScrollToTop />
       <div className={style.App}>
         <Header />
-        {isMobile ? <div>mobile</div> : <LandingBlock />}
-        {/*<Company />*/}
-        {/*<Transportation />*/}
+        <LandingBlock />
+        <Company />
+        <Transportation />
         {/*<Calculation />*/}
-        {/*<Footer />*/}
+        <Footer />
         {/*<Burger />*/}
-        {/*<Advantages />*/}
+        <Advantages />
       </div>
     </div>
   );

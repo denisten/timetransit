@@ -19,9 +19,10 @@ func HandleFeedback(cfg config.Config) gin.HandlerFunc {
 		}
 
 		message := "Новое сообщение:\n" +
-			"Откуда: " + feedback.From + "\n" +
-			"Куда: " + feedback.To + "\n" +
-			"Телефон: " + feedback.Phone
+			"Откуда: " + feedback.Country + "\n" +
+			"Имя: " + feedback.Name + "\n" +
+			"Телефон: " + feedback.Phone + "\n" +
+			"Комментарии: " + feedback.Comment + "\n"
 		chatID, _ := strconv.ParseInt(cfg.TelegramChatID, 10, 64)
 		log.Println("its chatID:", chatID)
 		telegramService, err := services.InitTelegramService(cfg.TelegramBotToken, chatID)

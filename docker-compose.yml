@@ -19,6 +19,8 @@ services:
     # Статический фронт будет доступен на 80 порту этого контейнера
     networks:
       - web_net
+    volumes:
+      - frontend_build:/usr/share/nginx/html # Раздача статики через volume
 
   nginx:
     build:
@@ -29,6 +31,7 @@ services:
       - "443:443"
     volumes:
       - /etc/letsencrypt:/etc/letsencrypt:ro
+      - frontend_build:/usr/share/nginx/html # Подключаем volume из фронтенда
 #      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
     depends_on:
       - backend

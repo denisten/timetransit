@@ -9,7 +9,7 @@ const dataInitState = {
   comment: "",
 };
 
-const isLocal = window.location.host == 'localhost:3000';
+const isLocal = window.location.host === 'localhost:3000';
 
 export const CallOrderForm = () => {
   const [formData, setFormData] = React.useState(dataInitState);
@@ -22,9 +22,9 @@ export const CallOrderForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("submitting");
     setIsSubmitting(true); // Устанавливаем состояние отправки
     const domain = isLocal ? 'http://localhost:8080' : ''
+    console.log({isLocal, domain})
     try {
       const response = await fetch(`${domain}/api/feedback`, {
         method: "POST",

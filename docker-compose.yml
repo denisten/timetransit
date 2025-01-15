@@ -15,11 +15,6 @@ services:
       - /etc/letsencrypt:/etc/letsencrypt:ro
 
   frontend:
-    deploy:
-      resources:
-        limits:
-          memory: 4g
-          cpus: '2.0'
     build:
       context: ./FE
     container_name: react_frontend

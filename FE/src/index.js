@@ -7,7 +7,6 @@ import { SeaCargoInfoPage } from "./pages/sea";
 import { TruckCargoInfoPage } from "./pages/truck";
 import { TrainCargoInfoPage } from "./pages/train";
 import { AviaCargoInfoPage } from "./pages/avia";
-import { ChakraProvider } from "@chakra-ui/react";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 const router = createBrowserRouter([
   {

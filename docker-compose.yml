@@ -11,6 +11,8 @@ services:
       - "8080:8080"
     networks:
       - web_net
+    volumes:
+      - /etc/letsencrypt:/etc/letsencrypt:ro
 
   frontend:
     build:

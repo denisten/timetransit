@@ -28,6 +28,8 @@ func CORSMiddleware() gin.HandlerFunc {
 func main() {
 	cfg := config.LoadConfig()
 	router := gin.Default()
+	log.Fatal(http.ListenAndServeTLS(":443", "/etc/ssl/live/timetransit.ru/fullchain.pem", "/etc/ssl/live/timetransit.ru/privkey.pem", nil))
+
 	router.Use(CORSMiddleware())
 	router.POST("/api/feedback", handlers.HandleFeedback(cfg))
 

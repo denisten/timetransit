@@ -6,7 +6,7 @@ COPY default.conf /etc/nginx/conf.d/default.conf
 
 # Копируем статические файлы фронтенда
 # Предполагается, что файлы фронтенда находятся в папке build
-COPY ./FE/build /usr/share/nginx/html
+#COPY ./FE/build /usr/share/nginx/html
 
 # Открываем порты
 EXPOSE 80 443

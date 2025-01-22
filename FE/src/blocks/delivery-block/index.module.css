@@ -19,6 +19,7 @@
 
 .title {
     font-size: 60px;
+    margin: 40px 0 80px 0;
     color: #a62226;
 }
 
@@ -50,7 +51,7 @@
 }
 
 .cardTitle {
-    font-size: 2rem;
+    /*font-size: 2rem;*/
     font-weight: bold;
     color: #A62226;
     margin-bottom: 10px;

@@ -36,7 +36,12 @@ const NumbersBlock = () => {
     };
   }, []);
   return (
-    <section className={styles.container} ref={ref}>
+    <section
+      className={styles.container}
+      data-section
+      data-bgcolor="rgba(166, 34, 38, 0.9)"
+      ref={ref}
+    >
       <h1 className={styles.title}>Доверие, подтвержденное цифрами</h1>
       <div className={styles.stats}>
         {stats.map((stat, index) => (

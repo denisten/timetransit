@@ -8,51 +8,48 @@ import globalSVG from "../../icons/global-trage.svg";
 import { ModalForm } from "../../components/modal-form";
 import { Element } from "react-scroll";
 
+const cards = [
+  {
+    image: truckSVG,
+    title: "Оперативная доставка",
+    description:
+      "Мы обеспечиваем быструю и безопасную доставку товаров, включая корреспонденцию, подарки и медицинские грузы.",
+  },
+  {
+    image: warehouseSVG,
+    title: "Полный цикл услуг",
+    description:
+      "От отправки до таможенной очистки – мы берём на себя все этапы доставки.",
+  },
+  {
+    image: planeSVG,
+    title: "Скорость – ключевой фактор",
+    description:
+      "Скорость доставки – наш приоритет для сохранения качества товаров, таких как медикаменты и пресса.",
+  },
+  {
+    image: paymentSVG,
+    title: "Платежи в КНР",
+    description:
+      "Организуем безопасные и прозрачные финансовые операции для расчётов с китайскими поставщиками.",
+  },
+  {
+    image: globalSVG,
+    title: "ВЭД под ключ",
+    description:
+      "Предоставляем услуги внешнеэкономической деятельности: от поиска поставщика до доставки товаров на ваш склад.",
+  },
+];
+
 export const DeliveryBlock = () => {
-  const [modalContent, setModalContent] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const cards = [
-    {
-      image: truckSVG,
-      title: "Оперативная доставка",
-      description:
-        "Мы обеспечиваем быструю и безопасную доставку товаров, включая корреспонденцию, подарки и медицинские грузы.",
-    },
-    {
-      image: warehouseSVG,
-      title: "Полный цикл услуг",
-      description:
-        "От отправки до таможенной очистки – мы берём на себя все этапы доставки.",
-    },
-    {
-      image: planeSVG,
-      title: "Скорость – ключевой фактор",
-      description:
-        "Скорость доставки – наш приоритет для сохранения качества товаров, таких как медикаменты и пресса.",
-    },
-    {
-      image: paymentSVG,
-      title: "Платежи в КНР",
-      description:
-        "Организуем безопасные и прозрачные финансовые операции для расчётов с китайскими поставщиками.",
-    },
-    {
-      image: globalSVG,
-      title: "ВЭД под ключ",
-      description:
-        "Предоставляем услуги внешнеэкономической деятельности: от поиска поставщика до доставки товаров на ваш склад.",
-    },
-  ];
-
-  const openModal = (title, description) => {
-    setModalContent({ title, description });
+  const openModal = () => {
     setIsModalOpen(true);
   };
 
   const closeModal = () => {
     setIsModalOpen(false);
-    setModalContent(null);
   };
 
   return (
@@ -68,12 +65,9 @@ export const DeliveryBlock = () => {
           {cards.map((card, index) => (
             <div key={index} className={styles.card}>
               <img src={card.image} alt={card.title} className={styles.image} />
-              <h1 className={styles.cardTitle}>{card.title}</h1>
+              <h2 className={styles.cardTitle}>{card.title}</h2>
               <p className={styles.description}>{card.description}</p>
-              <button
-                className={styles.button}
-                onClick={() => openModal(card.title, card.description)}
-              >
+              <button className={styles.button} onClick={openModal}>
                 Подробнее
               </button>
             </div>

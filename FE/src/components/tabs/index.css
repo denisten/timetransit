@@ -1,0 +1,74 @@
+:root {
+    --accent-brand-color: #a62226;
+    --text-invert-color: #fff;
+    --bg-secondary-color: #f5f5f5;
+}
+.mini-catalog__navigation {
+    width: 100%;
+}
+
+.tabs-layout__container {
+    width: 30%;
+    max-width: 680px;
+}
+
+.tabs-layout__button {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    background-color: transparent;
+    border: 0;
+    border-radius: 32px;
+    color: inherit;
+    cursor: pointer;
+    display: block;
+    line-height: 20px;
+    font-weight: bold;
+    margin: 0;
+    padding: 10px 16px;
+    transition: all .15s ease-out;
+    white-space: nowrap;
+    box-sizing: border-box;
+}
+
+.tabs-layout__button-text {
+    font-size: 16px;
+}
+
+.tabs-layout__button--active {
+    background-color: var(--accent-brand-color);
+    color: var(--text-invert-color);
+}
+
+@media (min-width: 1024px) {
+    .tabs-layout {
+        background-color: var(--bg-secondary-color);
+        border-radius: 32px;
+        display: flex;
+        gap: 4px;
+        justify-content: center;
+        padding: 4px;
+    }
+
+    .mini-catalog__navigation {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .tabs-layout__button {
+        padding: 14px;
+        width: 100%;
+    }
+
+    .tabs-layout__button-text {
+        font-size: 18px;
+    }
+
+    .tabs-layout__container {
+        width: 80%;
+    }
+}
+
+@media (min-width: 1280px) {
+    .mini-catalog__navigation {
+        max-width: 968px;
+    }
+}

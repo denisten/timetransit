@@ -1,8 +1,4 @@
 import style from "./transportation.module.css";
-import multi from "../../images/multi.png";
-import truck from "../../images/truckLogo.png";
-import plane from "../../images/plane.png";
-import train from "../../images/trainLogo.png";
 import aviaMap from "../../images/aviaMap.png";
 import multiMap from "../../images/multiMap.png";
 import truckMap from "../../images/truckMap.png";
@@ -10,24 +6,10 @@ import trainMap from "../../images/trainMap.png";
 import { Element } from "react-scroll";
 import { useState } from "react";
 import { Slider } from "../../components/slider/slider";
-import cn from "classnames";
-
-const images = {
-  avia: plane,
-  truck: truck,
-  train: train,
-  multi: multi,
-};
-
-const titles = {
-  truck: "Авто",
-  avia: "Авиа",
-  train: "Ж/Д",
-  multi: "Мультимодальные",
-};
+import { Tabs } from "../../components/tabs";
+import { tabsTitles } from "../../components/tabs/tabs";
 
 const data = [aviaMap, truckMap, trainMap, multiMap];
-const types = ["avia", "truck", "train", "multi"];
 
 const SlideContent = ({ item }) => {
   return (
@@ -36,40 +18,34 @@ const SlideContent = ({ item }) => {
     </div>
   );
 };
-
+const keys = tabsTitles.map((tab) => tab.id);
 export const Transportation = () => {
-  const [selectedItem, setSelectedItem] = useState("avia");
+  const [selectedItem, setSelectedItem] = useState("auto");
   // avia || truck || train || multi
 
   const handleSelectTransportationType = (type) => {
-    return () => setSelectedItem(type);
+    setSelectedItem(type);
   };
   return (
-    <Element name="transportation">
+    <Element
+      name="transportation"
+      data-section
+      data-bgcolor="rgba(166, 34, 38, 0.9)"
+    >
       <div className={style.container}>
         <div className={style.title}>
           <h1 className={style.titleBlack}>Все виды</h1>
           <h1 className={style.titleRed}>транспортировки</h1>
         </div>
         <div className={style.tabs}>
-          {Object.keys(images).map((key) => {
-            return (
-              <div
-                key={key}
-                className={cn(style.plate, {
-                  [style.plateActive]: selectedItem === key,
-                })}
-                onClick={handleSelectTransportationType(key)}
-              >
-                <img className={style.tabImg} src={images[key]} alt="" />
-                <span className={style.tabText}>{titles[key]}</span>
-              </div>
-            );
-          })}
+          <Tabs
+            selectedItem={selectedItem}
+            onChange={handleSelectTransportationType}
+          />
         </div>
         <Slider
           isFullHeight={false}
-          activeIndex={types.indexOf(selectedItem)}
+          activeIndex={keys.indexOf(selectedItem)}
           data={data}
           Content={SlideContent}
         />

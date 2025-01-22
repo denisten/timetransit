@@ -1,0 +1,403 @@
+.container{
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    margin-top: 150px;
+}
+
+.margin{
+    margin-bottom: 150px;
+}
+
+.titleBlack{
+    font-size: 60px;
+    text-align: center;
+    color: #000;
+}
+
+.titleRed{
+    font-size: 60px;
+    text-align: center;
+    color: #c3202b;
+}
+
+.containerTrasportation{
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    margin: 100px 50px;
+}
+
+.plateActive{
+    border-radius: 20px;
+    box-shadow: 0 0 10px 7px rgba(237, 28, 36, 0.2);
+    background: #fff;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding-left: 30px;
+    cursor: pointer;
+}
+
+.plateActive:hover {
+    transform: translateY(-10px) scale(1.1);
+}
+
+.plateDisable:hover {
+    transform: translateY(-10px) scale(1.1);
+}
+
+.plateDisable{
+    border-radius: 20px;
+    height: 100px;
+    box-shadow: 4px 4px 4px 0 rgba(0, 0, 0, 0.25);
+    background: rgba(233, 233, 233, 0.5);
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding-left: 30px;
+    cursor: pointer;
+}
+
+.plane{
+    width: 50px;
+    height: 50px;
+}
+
+.truck{
+    width: 80px;
+    height: 80px;
+}
+
+.train{
+    width: 80px;
+    height: 80px;
+}
+
+.multi{
+    width: 50px;
+    height: 50px;
+}
+
+.text{
+    font-size: 40px;
+    color: #000;
+    padding-left: 20px;
+    padding-right: 40px;
+}
+
+.map{
+    width: 80vw;
+}
+
+
+@media (max-width: 1440px) {
+    .plane{
+        height: 50px;
+        width: 50px;
+    }
+
+    .truck{
+        height: 60px;
+        width: 60px;
+
+    }
+
+    .train{
+        width: 60px;
+        height: 60px;
+    }
+
+    .multi{
+        height: 50px;
+        width: 50px;
+
+    }
+
+    .text{
+        font-size: 36px;
+        padding-right: 30px;
+    }
+
+    .containerTrasportation{
+        gap: 40px;
+        margin: 70px 30px;
+    }
+}
+
+@media (max-width: 1080px) {
+    .container{
+        margin-top: 100px;
+    }
+
+    .titleBlack{
+        font-size: 50px;
+    }
+
+    .titleRed{
+        font-size: 50px;
+    }
+
+    .plane{
+        height: 30px;
+        width: 30px;
+    }
+
+    .truck{
+        height: 40px;
+        width: 40px;
+
+    }
+
+    .train{
+        width: 40px;
+        height: 40px;
+    }
+
+    .multi{
+        height: 30px;
+        width: 30px;
+
+    }
+
+    .text{
+        font-size: 28px;
+        padding-left: 10px;
+        padding-right: 20px;
+    }
+
+    .plateActive{
+        border-radius: 20px;
+        padding-left: 15px;
+    }
+
+    .plateDisable{
+        height: 70px;
+        padding-left: 15px;
+    }
+
+    .plateActive:hover {
+        transform: translateY(-5px) scale(1.1);
+    }
+
+    .plateDisable:hover {
+        transform: translateY(-5px) scale(1.1);
+    }
+
+    .containerTrasportation{
+        gap: 30px;
+        margin: 50px 30px;
+    }
+    .margin{
+        margin-bottom: 100px;
+    }
+}
+
+
+
+@media (max-width: 768px) {
+    .margin{
+        margin-bottom: 100px;
+    }
+
+    .container{
+        margin-top: 100px;
+    }
+
+    .titleBlack{
+        font-size: 40px;
+    }
+
+    .titleRed{
+        font-size: 40px;
+    }
+
+    .plane{
+        height: 25px;
+        width: 25px;
+    }
+
+    .truck{
+        height: 35px;
+        width: 35px;
+
+    }
+
+    .train{
+        width: 35px;
+        height: 35px;
+    }
+
+    .multi{
+        height: 25px;
+        width: 25px;
+
+    }
+
+    .text{
+        font-size: 22px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .plateActive{
+        height: 60px;
+        border-radius: 20px;
+        padding-left: 15px;
+    }
+
+    .plateDisable{
+        height: 60px;
+        padding-left: 15px;
+    }
+
+    .containerTrasportation{
+        gap: 30px;
+    }
+
+    .map{
+        width: 90vw;
+    }
+}
+
+@media (max-width: 480px) {
+    .plateActive:hover {
+        transform: translateY(-3px) scale(1.1);
+    }
+
+    .plateDisable:hover {
+        transform: translateY(-3px) scale(1.1);
+    }
+
+    .container{
+        margin-top: 80px;
+        gap: 16px;
+    }
+
+    .margin{
+        margin-bottom: 50px;
+    }
+
+    .titleBlack{
+        font-size: 28px;
+    }
+
+    .titleRed{
+        font-size: 28px;
+    }
+
+
+    .containerTrasportation{
+        gap: 16px;
+        margin: 30px 30px;
+    }
+
+    .plane{
+        height: 15px;
+        width: 15px;
+    }
+
+    .truck{
+        height: 20px;
+        width: 20px;
+
+    }
+
+    .train{
+        width: 20px;
+        height: 20px;
+    }
+
+    .multi{
+        height: 15px;
+        width: 15px;
+    }
+
+    .text{
+        font-size: 14px;
+        padding-left: 5px;
+        padding-right: 10px;
+    }
+
+    .plateActive{
+        border-radius: 20px;
+        padding-left: 10px;
+        height: 40px;
+    }
+
+    .plateDisable{
+        height: 40px;
+        padding-left: 10px;
+    }
+}
+
+
+@media (max-width: 320px) {
+    .plateActive:hover {
+        transform: translateY(-2px) scale(1.1);
+    }
+
+    .plateDisable:hover {
+        transform: translateY(-2px) scale(1.1);
+    }
+
+    .margin{
+        margin-bottom: 30px;
+    }
+
+    .container{
+        gap: 8px;
+        margin-top: 70px;
+    }
+
+    .titleBlack{
+        font-size: 22px;
+    }
+
+    .titleRed{
+        font-size: 22px;
+    }
+
+    .containerTrasportation{
+        gap: 8px;
+        margin: 30px 30px;
+    }
+
+    .plane{
+        height: 10px;
+        width: 10px;
+    }
+
+    .truck{
+        height: 15px;
+        width: 15px;
+
+    }
+
+    .train{
+        width: 15px;
+        height: 15px;
+    }
+
+    .multi{
+        height: 10px;
+        width: 10px;
+    }
+
+    .text{
+        font-size: 10px;
+        padding-left: 2px;
+        padding-right: 8px;
+    }
+
+    .plateActive{
+        border-radius: 20px;
+        padding-left: 8px;
+        height: 30px;
+    }
+
+    .plateDisable{
+        height: 30px;
+        padding-left: 8px;
+    }
+}

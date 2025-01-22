@@ -1,12 +1,12 @@
 .container{
+    margin-bottom: 150px;
+}
+
+.title {
     display: flex;
     gap: 30px;
     justify-content: center;
     margin-top: 150px;
-}
-
-.margin{
-    margin-bottom: 150px;
 }
 
 .titleBlack{
@@ -21,15 +21,14 @@
     color: #c3202b;
 }
 
-.containerTrasportation{
+.tabs{
     display: flex;
     gap: 50px;
     justify-content: center;
-    margin: 100px 50px;
+    margin: 40px 50px;
 }
 
 .plateActive{
-    border-radius: 20px;
     box-shadow: 0 0 10px 7px rgba(237, 28, 36, 0.2);
     background: #fff;
     display: flex;
@@ -39,15 +38,11 @@
     cursor: pointer;
 }
 
-.plateActive:hover {
+.plate:hover {
     transform: translateY(-10px) scale(1.1);
 }
 
-.plateDisable:hover {
-    transform: translateY(-10px) scale(1.1);
-}
-
-.plateDisable{
+.plate{
     border-radius: 20px;
     height: 100px;
     box-shadow: 4px 4px 4px 0 rgba(0, 0, 0, 0.25);
@@ -56,70 +51,59 @@
     justify-content: start;
     align-items: center;
     padding-left: 30px;
+    transition: .3s ease transform;
     cursor: pointer;
 }
 
-.plane{
+.tabImg{
     width: 50px;
     height: 50px;
 }
 
-.truck{
-    width: 80px;
-    height: 80px;
-}
 
-.train{
-    width: 80px;
-    height: 80px;
-}
-
-.multi{
-    width: 50px;
-    height: 50px;
-}
-
-.text{
+.tabText {
     font-size: 40px;
     color: #000;
     padding-left: 20px;
     padding-right: 40px;
 }
 
-.map{
-    width: 80vw;
+.sliderImg {
+    max-width: 80%; /* Устанавливаем максимальную ширину 100% от контейнера */
+    max-height: 100%; /* Устанавливаем максимальную высоту 100% от контейнера */
+    width: auto; /* Адаптивная ширина */
+    height: auto; /* Адаптивная высота */
+    object-fit: contain; /* Умещает изображение внутри блока, сохраняя пропорции */
+    margin: 0 auto; /* Центрируем изображение */
+    display: block; /* Убираем возможные inline эффекты */
+    /*width: 80%;*/
+    /*height: 86%;*/
+    /*object-fit: contain;*/
+    /*margin: 0 auto;*/
+    /*display: block;*/
+}
+
+.sliderContainer {
+    width: 100%; /* Полная ширина контейнера */
+    height: 80%; /* Высота экрана минус отступы (например, 150px для заголовка) */
+    display: flex;
+    align-items: center; /* Центрируем изображение по вертикали */
+    justify-content: center; /* Центрируем изображение по горизонтали */
 }
 
 
 @media (max-width: 1440px) {
-    .plane{
+    .tabImg{
         height: 50px;
         width: 50px;
     }
 
-    .truck{
-        height: 60px;
-        width: 60px;
-
-    }
-
-    .train{
-        width: 60px;
-        height: 60px;
-    }
-
-    .multi{
-        height: 50px;
-        width: 50px;
-
-    }
-
-    .text{
+    .tabText{
         font-size: 36px;
         padding-right: 30px;
     }
 
-    .containerTrasportation{
+    .tabs{
         gap: 40px;
         margin: 70px 30px;
     }
@@ -138,29 +122,12 @@
         font-size: 50px;
     }
 
-    .plane{
+    .tabImg{
         height: 30px;
         width: 30px;
     }
 
-    .truck{
-        height: 40px;
-        width: 40px;
-
-    }
-
-    .train{
-        width: 40px;
-        height: 40px;
-    }
-
-    .multi{
-        height: 30px;
-        width: 30px;
-
-    }
-
-    .text{
+    .tabText{
         font-size: 28px;
         padding-left: 10px;
         padding-right: 20px;
@@ -184,22 +151,17 @@
         transform: translateY(-5px) scale(1.1);
     }
 
-    .containerTrasportation{
+    .tabs{
         gap: 30px;
         margin: 50px 30px;
     }
-    .margin{
-        margin-bottom: 100px;
+
+    .sliderImg {
+        height: auto;
     }
 }
 
-
-
 @media (max-width: 768px) {
-    .margin{
-        margin-bottom: 100px;
-    }
-
     .container{
         margin-top: 100px;
     }
@@ -212,29 +174,12 @@
         font-size: 40px;
     }
 
-    .plane{
+    .tabImg{
         height: 25px;
         width: 25px;
     }
 
-    .truck{
-        height: 35px;
-        width: 35px;
-
-    }
-
-    .train{
-        width: 35px;
-        height: 35px;
-    }
-
-    .multi{
-        height: 25px;
-        width: 25px;
-
-    }
-
-    .text{
+    .tabText{
         font-size: 22px;
         padding-left: 10px;
         padding-right: 10px;
@@ -251,16 +196,25 @@
         padding-left: 15px;
     }
 
-    .containerTrasportation{
+    .tabs{
         gap: 30px;
     }
+    .sliderImg {
+        max-width: 90%; /* Уменьшаем ширину для мобильных устройств */
+        max-height: 70%; /* Ограничиваем высоту */
+    }
 
-    .map{
-        width: 90vw;
+    .sliderContainer {
+        height: auto;
     }
 }
 
 @media (max-width: 480px) {
+
+    .sliderImg {
+        width: 400px;
+        height: auto;
+    }
     .plateActive:hover {
         transform: translateY(-3px) scale(1.1);
     }
@@ -269,12 +223,12 @@
         transform: translateY(-3px) scale(1.1);
     }
 
-    .container{
+    .title{
         margin-top: 80px;
         gap: 16px;
     }
 
-    .margin{
+    .container{
         margin-bottom: 50px;
     }
 
@@ -287,33 +241,16 @@
     }
 
 
-    .containerTrasportation{
+    .tabs{
         gap: 16px;
         margin: 30px 30px;
     }
 
-    .plane{
+    .tabImg{
         height: 15px;
         width: 15px;
     }
-
-    .truck{
-        height: 20px;
-        width: 20px;
-
-    }
-
-    .train{
-        width: 20px;
-        height: 20px;
-    }
-
-    .multi{
-        height: 15px;
-        width: 15px;
-    }
-
-    .text{
+    .tabText{
         font-size: 14px;
         padding-left: 5px;
         padding-right: 10px;
@@ -341,11 +278,11 @@
         transform: translateY(-2px) scale(1.1);
     }
 
-    .margin{
+    .container{
         margin-bottom: 30px;
     }
 
-    .container{
+    .title{
         gap: 8px;
         margin-top: 70px;
     }
@@ -358,33 +295,17 @@
         font-size: 22px;
     }
 
-    .containerTrasportation{
+    .tabs{
         gap: 8px;
         margin: 30px 30px;
     }
 
-    .plane{
+    .tabImg{
         height: 10px;
         width: 10px;
     }
 
-    .truck{
-        height: 15px;
-        width: 15px;
-
-    }
-
-    .train{
-        width: 15px;
-        height: 15px;
-    }
-
-    .multi{
-        height: 10px;
-        width: 10px;
-    }
-
-    .text{
+    .tabText{
         font-size: 10px;
         padding-left: 2px;
         padding-right: 8px;

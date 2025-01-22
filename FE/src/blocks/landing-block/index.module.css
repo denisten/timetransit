@@ -37,8 +37,6 @@
 
 .logoBlock{
     display: flex;
-    flex-wrap: nowrap;
-    align-items: center;
 }
 
 .textBlock{
@@ -48,25 +46,27 @@
 }
 
 .logo{
-    height: 270px;
+    height: 180px;
     display: flex;
     margin-right: 20px;
 }
 
 .time{
+    margin: 0;
     font-weight: 800;
     font-size: 100px;
     color: #a62226;
     text-align: left;
+
 }
 
 .transit{
+    margin: 0;
     font-weight: 700;
-    font-size: 120px;
+    font-size: 92px;
     letter-spacing: 0.06em;
     color: #fff;
     line-height: 20px;
-    text-align: start;
 }
 
 .textDownLogo{
@@ -93,7 +93,7 @@
     }
 
     .logo {
-        height: 210px;
+        height: 180px;
     }
 
     .textDownLogo {

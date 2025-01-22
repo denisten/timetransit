@@ -1,150 +1,60 @@
 .container{
-    background: #c3202b;
-    height: 80px;
-    display: flex;
+    justify-content: start;
     align-items: center;
-    padding: 0 10% 0 10%;
+    padding: 16px 80px;
     z-index: 1000;
-    color: #fff;
-    font-weight: 400;
-    font-size: 30px;
     position: fixed;
     width: 100%;
     box-sizing: border-box;
+    transition: background-color 0.3s ease;
 }
 
-.links{
-    width: 100%;
+.linksContainer {
     display: flex;
-    justify-content: space-between;
+    font-size: 20px;
+    color: #fff;
     align-items: center;
 }
 
-.links a {
+.linksContainer a {
     cursor: pointer;
     text-decoration: none;
     color: white;
+    margin: 0 20px;
+    padding: 6px 0;
+    box-sizing: border-box;
 }
 
-.linkButton{
-    padding: 10px 40px;
+.linksContainer a:hover {
+    scale: 1.1;
+    color: #D50000;
+}
+
+.logo {
     height: 40px;
-    border-radius: 7px;
-    color: #a62226;
-    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
-    background: #fff;
-    border: none;
-    font-size: 30px;
+    margin-right: 40px;
     cursor: pointer;
 }
 
 @media (max-width: 1440px) {
     .container {
         font-size: 24px;
-        /*height: 100px;*/
-    }
-
-    .linkButton {
-        padding: 10px 20px;
-        /*height: 60px;*/
-        font-size: 24px;
-    }
-
-    .dropdownContainer a {
-        width: 180px;
-    }
-
-    .dropdownContainer {
-        margin: 0 -52px;
-    }
-
-    .openedDropdown {
-        margin-top: 36px;
     }
 }
 
 
 @media (max-width: 1080px) {
     .container {
-        font-size: 22px;
-        height: 100px;
+        padding: 16px 40px;
     }
-
-    .linkButton {
-        padding: 10px 20px;
-        height: 60px;
-        font-size: 24px;
-    }
-
-    .dropdownContainer a {
-        color: black;
-        width: 140px;
-    }
-
-    .dropdownContainer {
-        margin: 0 -32px;
-    }
-
-    .openedDropdown {
-        margin-top: 37px;
+    .linksContainer {
+        font-size: 20px;
     }
 }
 
 
 @media (max-width: 768px) {
-    .burger{
-        cursor: pointer;
-        width: 50px;
-        z-index: 1;
-    }
-
-
-    .container {
-        padding: 0 40px;
-        font-size: 22px;
-        /*height: 100px;*/
-    }
-
-    .linkButton {
-        padding: 10px 20px;
-        height: 60px;
-        font-size: 24px;
-    }
-
-    .linkButton{
-        font-size: 28px;
-    }
-}
-
-@media (max-width: 480px) {
-    .burger{
-        width: 50px;
-    }
-
-    .container{
-        height: 80px;
-    }
-
-    .linkButton{
-        padding: 10px 20px;
-        height: 42px;
-        font-size: 22px;
-    }
-}
-
-@media (max-width: 320px) {
-    .burger{
-        width: 30px;
-    }
-
-    .container{
-        height: 60px;
-        padding: 0 30px;
-    }
-
-    .linkButton{
-        padding: 5px 10px;
-        height: 30px;
-        font-size: 16px;
+    .linksContainer {
+        font-size: 12px;
     }
 }

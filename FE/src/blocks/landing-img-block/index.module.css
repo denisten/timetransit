@@ -1,0 +1,156 @@
+.contentContainer{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    position: absolute;
+    top: 50%;
+    translate: -50% -50%;
+    left: 50%;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    z-index: 100;
+}
+
+
+.content {
+    position: absolute;
+    /*backdrop-filter: blur(30px);*/
+    /*background: hsla(0, 0%, 66%, .1);*/
+    padding: 40px;
+    border-radius: 24px;
+}
+
+.logo {
+    height: 160px;
+    margin-right: 20px;
+}
+
+.logoContainer {
+    display: flex;
+}
+
+.title {
+    font-weight: 800;
+}
+
+.titleS {
+    font-size: 92px;
+    letter-spacing: 0.06em;
+    color: #fff;
+    line-height: 20px;
+}
+
+.titleL {
+    font-size: 120px;
+    color: #a62226;
+    text-align: left;
+    line-height: 0;
+}
+
+
+.sliderImg {
+    max-width: 100%; /* Устанавливаем максимальную ширину 100% от контейнера */
+    max-height: 100%; /* Устанавливаем максимальную высоту 100% от контейнера */
+    width: 100%; /* Адаптивная ширина */
+    height: 100%; /* Адаптивная высота */
+    /*object-fit: contain; !* Умещает изображение внутри блока, сохраняя пропорции *!*/
+    margin: 0 auto; /* Центрируем изображение */
+    display: block; /* Убираем возможные inline эффекты */
+}
+
+.sliderContainer {
+    width: 100%; /* Полная ширина контейнера */
+    height: 100%; /* Высота экрана минус отступы (например, 150px для заголовка) */
+    display: flex;
+    align-items: center; /* Центрируем изображение по вертикали */
+    justify-content: center; /* Центрируем изображение по горизонтали */
+    position: relative;
+}
+
+@media (max-width: 1440px) {
+    .time {
+        font-size: 80px;
+    }
+
+    .transit {
+        font-size: 100px;
+    }
+
+    .logo {
+        height: 180px;
+    }
+
+    .textDownLogo {
+        font-size: 34px;
+        width: 520px;
+        margin-top: 50px;
+    }
+}
+@media (max-width: 1080px) {
+    .formContainer {
+        /*translate: -50% -50%;*/
+        right: -60%;
+    }
+
+    .time {
+        font-size: 64px;
+    }
+
+    .transit {
+        font-size: 80px;
+    }
+
+    .logo {
+        height: 190px;
+    }
+
+    .textDownLogo {
+        margin-top: 40px;
+        font-size: 30px;
+        width: 480px;
+        line-height: 50px;
+    }
+
+}
+
+@media (max-width: 480px) {
+    .container {
+        top: 80%;
+    }
+
+    .logo {
+        height: 140px;
+        margin-right: 12px;
+    }
+
+    .transit {
+        font-size: 60px;
+    }
+
+    .textDownLogo {
+        font-size: 20px;
+        max-width: 300px;
+        line-height: 26px;
+    }
+
+}
+
+@media (max-width: 320px) {
+}

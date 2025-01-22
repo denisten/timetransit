@@ -1,25 +1,25 @@
 export const isMobile = window.innerWidth < 769;
-
-export const headerItems = [
-  "landing",
-  "company",
-  "transportation",
-  // "calculation",
-  "contacts",
-];
+export const linksMap = {
+  landing: "",
+  company: "",
+};
+export const headerItems = ["landing", "company", "transportation", "contacts"];
 
 export const headerItemsRus = [
   "Главная",
   "О компании",
-  "Карта",
-  // "Стоимость",
+  "Виды транспортировок",
   "Контакты",
 ];
 
 export const headerTitles = {
-  landing: "Главная",
-  company: "О компании",
-  transportation: "Карта",
+  landing: "ГЛАВНАЯ",
+  company: "О КОМПАНИИ",
+  transportation: "ТРАНСПОРТИРОВКА",
   // calculation: "Стоимость",
-  contacts: "Контакты",
+  contacts: "КОНТАКТЫ",
 };
+
+export const mainPageBlocks = ["landing", "company", "contacts", "map"];
+
+export const headerMainColor = "rgba(166, 34, 38, 0.9)";

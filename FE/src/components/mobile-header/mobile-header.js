@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import {
-  AppBar,
-  Toolbar,
   IconButton,
   Drawer,
   List,
@@ -10,7 +8,7 @@ import {
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
-import { headerItemsRus, headerTitles } from "../../constants";
+import { headerItemsRus } from "../../constants";
 
 export const MobileMenu = () => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);

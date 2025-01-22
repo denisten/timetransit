@@ -1,50 +1,46 @@
-import React from "react";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import s from "./slider.module.css";
-import style from "../../blocks/landing-block/index.module.css";
-import logo from "../../images/logo.png";
-import drawing from "../../images/drawing.png";
+import { EffectFade, Autoplay } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { useEffect, useRef } from "react";
 
-const settings = {
-  dots: true,
-  // fade: true,
-  infinite: true,
-  speed: 500,
-  autoplaySpeed: 2000,
-  slidesToShow: 1,
-  slidesToScroll: 1,
-  waitForAnimate: false,
-  // autoplay: true,
+import "swiper/css";
+import "swiper/css/autoplay";
+import "swiper/css/effect-fade";
+const autoplaySettings = {
+  delay: 3000,
+  disableOnInteraction: false,
 };
+export const Slider = ({
+  data,
+  Content,
+  activeIndex,
+  autoplay = false,
+  isFullHeight = true,
+}) => {
+  const swiperRef = useRef(null); // Ссылка на экземпляр Swiper
 
-export const ImageSlider = ({ images }) => {
+  // Обновляем активный слайд при изменении пропса activeIndex
+  useEffect(() => {
+    if (swiperRef.current && activeIndex !== undefined) {
+      swiperRef.current.slideToLoop(activeIndex); // Переключаем на нужный слайд с учётом loop
+    }
+  }, [activeIndex]);
+
   return (
-    <div className={s.sliderContainer}>
-      <Slider {...settings}>
-        {images.map((image) => (
-          <div className={style.container}>
-            <div className={style.block}>
-              <div className={style.logoBlock}>
-                <img className={style.logo} src={logo} alt="logo" />
-                <div className={style.textBlock}>
-                  <span className={style.time}>TIME</span>
-                  <span className={style.transit}>transit</span>
-                </div>
-              </div>
-              <div className={style.textDownLogo}>
-                Доставка грузов из Азии в Россию и страны СНГ с 1997 года.
-              </div>
-              <img className={style.drawing} src={drawing} alt="drawing" />
-              <button className={style.buttonOnline}>
-                <span className={style.buttonText}>Запрос он-лайн</span>
-              </button>
-            </div>
-            <img src={image} alt="" />
-          </div>
-        ))}
-      </Slider>
-    </div>
+    <Swiper
+      modules={[Autoplay, EffectFade]}
+      effect="fade"
+      spaceBetween={50}
+      slidesPerView={1}
+      loop={true}
+      autoplay={autoplay ? autoplaySettings : undefined}
+      onSwiper={(swiper) => (swiperRef.current = swiper)} // Получаем экземпляр Swiper
+      style={{ width: "100%", height: isFullHeight ? "100vh" : "auto" }}
+    >
+      {data.map((item, index) => (
+        <SwiperSlide key={index}>
+          <Content item={item} isActive={index === activeIndex} />
+        </SwiperSlide>
+      ))}
+    </Swiper>
   );
 };

@@ -1,5 +1,5 @@
 import React from "react";
-import { TextField, Button, MenuItem, Box, Typography } from "@mui/material";
+import { TextField, Button, Box, Typography } from "@mui/material";
 import InputMask from "react-input-mask";
 
 const dataInitState = {
@@ -7,9 +7,10 @@ const dataInitState = {
   name: "",
   phone: "",
   comment: "",
+  email: "",
 };
 
-const isLocal = window.location.host === 'localhost:3000';
+const isLocal = window.location.host === "localhost:3000";
 
 export const CallOrderForm = () => {
   const [formData, setFormData] = React.useState(dataInitState);
@@ -23,8 +24,8 @@ export const CallOrderForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true); // Устанавливаем состояние отправки
-    const domain = isLocal ? 'http://localhost:8080' : ''
-    console.log({isLocal, domain})
+    const domain = isLocal ? "http://localhost:8080" : "";
+    console.log({ isLocal, domain });
     try {
       const response = await fetch(`${domain}/api/feedback`, {
         method: "POST",
@@ -81,12 +82,12 @@ export const CallOrderForm = () => {
             color: "#a62226", // Цвет бренда
           }}
         >
-          Заказ звонка
+          Ваш запрос
         </Typography>
 
         {/* Страна отправки */}
         <TextField
-          label="Откуда"
+          label="Маршрут"
           name="country"
           value={formData.country}
           onChange={handleChange}
@@ -124,9 +125,21 @@ export const CallOrderForm = () => {
           )}
         </InputMask>
 
+        {/* Email */}
+        <TextField
+          label="Email"
+          name="email"
+          type="email" // Добавляем проверку на корректность email
+          value={formData.email}
+          onChange={handleChange}
+          required
+          fullWidth
+          sx={{ marginBottom: 2 }}
+        />
+
         {/* Комментарий */}
         <TextField
-          label="Комментарий"
+          label="Описание груза"
           name="comment"
           value={formData.comment}
           onChange={handleChange}
@@ -150,7 +163,7 @@ export const CallOrderForm = () => {
             fontWeight: "bold",
           }}
         >
-          Заказать звонок
+          Отправить запрос
         </Button>
       </Box>
     </Box>

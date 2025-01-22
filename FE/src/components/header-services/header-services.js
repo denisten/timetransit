@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Menu, MenuItem, Button } from "@mui/material";
+import React from "react";
+import { Menu, MenuItem } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
 const linkMap = {
@@ -23,24 +23,8 @@ export const HeaderServices = () => {
   };
 
   return (
-    <div>
-      <Button
-        id="basic-button"
-        aria-controls={open ? "basic-menu" : undefined}
-        aria-haspopup="true"
-        aria-expanded={open ? "true" : undefined}
-        onClick={handleClick}
-        sx={{
-          fontSize: 13,
-          color: "#fff",
-          cursor: "pointer",
-          "&:hover": {
-            scale: 1.1,
-          },
-        }}
-      >
-        Услуги
-      </Button>
+    <>
+      <a onClick={handleClick}>Услуги</a>
       <Menu
         id="basic-menu"
         anchorEl={anchorEl}
@@ -54,6 +38,8 @@ export const HeaderServices = () => {
           <MenuItem
             key={link}
             onClick={() => {
+              const _link = linkMap[link];
+              console.log({ _link, link });
               navigate(linkMap[link]);
               handleClose();
             }}
@@ -62,6 +48,6 @@ export const HeaderServices = () => {
           </MenuItem>
         ))}
       </Menu>
-    </div>
+    </>
   );
 };

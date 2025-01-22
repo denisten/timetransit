@@ -4,15 +4,19 @@ import { Header } from "../../blocks/header";
 import { InfoPageSubtitle } from "../../blocks/info-page-subtitle/info-page-subtitle";
 import ship from "../../images/ship.png";
 import avia from "../../images/avia.png";
-import { useEffect } from "react";
-import { scrollTopEffect, useScrollTop } from "../../hooks/use-scroll-top";
+import { useScrollTop } from "../../hooks/use-scroll-top";
+import { headerMainColor } from "../../constants";
 
 export const AviaCargoInfoPage = () => {
   useScrollTop();
   return (
     <div className={style.container}>
       <Header />
-      <div className={style.pageTitle}>
+      <div
+        className={style.pageTitle}
+        data-bgcolor={headerMainColor}
+        data-section
+      >
         <span className={style.title}>Авиадоставка грузов из Китая</span>
         <span className={style.text}>
           На протяжении многих лет компания «Time Transit» предоставляет

@@ -1,14 +1,10 @@
 .titleCompany{
-    font-weight: 600;
     font-size: 60px;
     text-align: center;
     color: #c3202b;
-    width: 440px;
-    height: 90px;
-
 }
 
-.backCompany{
+.backCompany {
     position: absolute;
     width: 100vw;
     height: 600px;
@@ -46,9 +42,7 @@
 }
 
 .plateTitle {
-    font-weight: 600;
     font-size: 36px;
-    letter-spacing: 0.01em;
     color: #fff;
 }
 

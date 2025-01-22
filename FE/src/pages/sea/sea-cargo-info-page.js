@@ -5,16 +5,30 @@ import ship from "../../images/ship.png";
 import sea from "../../images/sea.png";
 import draw from "../../images/draw.png";
 import { InfoPageSubtitle } from "../../blocks/info-page-subtitle/info-page-subtitle";
-import drawBoxBackground from "../../images/draw-box-background.png";
 import { useScrollTop } from "../../hooks/use-scroll-top";
+import { motion } from "framer-motion";
+import { pageTransition, pageVariants } from "../../utils/animation";
+import { headerMainColor } from "../../constants";
 
 export const SeaCargoInfoPage = () => {
   useScrollTop();
 
   return (
-    <div className={style.container}>
+    <motion.div
+      initial="hidden"
+      animate="visible"
+      exit="exit"
+      variants={pageVariants}
+      transition={pageTransition}
+      className={style.container}
+    >
+      {/*<div className={style.container}>*/}
       <Header />
-      <div className={style.pageTitle}>
+      <div
+        className={style.pageTitle}
+        data-bgcolor={headerMainColor}
+        data-section
+      >
         <span className={style.title}>Морские перевозки грузов из Китая</span>
         <span className={style.text}>
           «Time Transit» осуществляет доставку грузов морским транспортом,
@@ -57,6 +71,6 @@ export const SeaCargoInfoPage = () => {
         эффективно, понимая возложенную на нас ответственность!
       </div>
       <Footer />
-    </div>
+    </motion.div>
   );
 };

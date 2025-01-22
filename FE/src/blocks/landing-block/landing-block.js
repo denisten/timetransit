@@ -1,42 +1,56 @@
 import style from "./index.module.css";
 import logo from "../../images/logo.png";
-// import ship from "../../images/ship.png";
-// import truck from "../../images/slider-truck.png";
-// import airplane from "../../images/slider-airplane.png";
-import train from "../../images/slider-train.png";
 import { Element } from "react-scroll";
 import bridge from "../../videos/slider-video-cargo-port-with-bridge.mp4";
 import ship from "../../videos/slider-video-ship.mp4";
 import port from "../../videos/slider-video-cargo-port.mp4";
-import "swiper/css";
-import "swiper/css/autoplay";
-import "swiper/css/effect-fade";
-import { ImageSlider } from "../../components/slider/slider";
-import { SwiperSlide, Swiper } from "swiper/react";
-import { EffectFade, Autoplay } from "swiper/modules";
-import { TextField, Button, MenuItem, Box, Typography } from "@mui/material";
+import { Box } from "@mui/material";
 
 import { CallOrderForm } from "../../components/call-order-form";
+import { Slider } from "../../components/slider/slider";
 const videos = [
   {
     src: bridge,
-    text: "Доставка грузов из Азии в Россию и страны СНГ с 1997 года",
+    text: "«Time Transit» – компания с более чем 20-летним опытом в транспортных перевозках и логистике.",
+    // text: "Доставка грузов из Азии в Россию и страны СНГ с 1997 года",
   },
-  { src: ship, text: "Международная логистика на новом уровне" },
-  { src: port, text: "Мультимодальные перевозки — гибко и выгодно" },
+  {
+    src: ship,
+    text: "Мы обеспечиваем надежную доставку корреспонденции, товаров и грузов с полной прозрачностью и ответственностью.",
+  },
+  // { src: ship, text: "Международная логистика на новом уровне" },
+  {
+    src: port,
+    text: "Наша миссия - создавать удобные и безопасные логистические решения для клиентов, гарантируя индивидуальный подход.",
+  },
+  // { src: port, text: "Мультимодальные перевозки — гибко и выгодно" },
 ];
 
-const Content = ({ text }) => {
+const Content = ({ item }) => {
+  const { src, text } = item;
   return (
-    <div className={style.contentContainer}>
-      <div className={style.logoBlock}>
-        <img className={style.logo} src={logo} alt="logo" />
-        <div className={style.textBlock}>
-          <span className={style.time}>TIME</span>
-          <span className={style.transit}>transit</span>
+    <div style={{ position: "relative", width: "100%", height: "100%" }}>
+      <video
+        src={src}
+        autoPlay
+        loop
+        muted
+        style={{ width: "100%", height: "100%", objectFit: "cover" }}
+      />
+      <div className={style.overlay}>
+        <div className={style.container}>
+          <div className={style.contentContainer}>
+            <div className={style.logoBlock}>
+              <img className={style.logo} src={logo} alt="logo" />
+              <div className={style.textBlock}>
+                <h1 className={style.time}>TIME</h1>
+                <h2 className={style.transit}>transit</h2>
+              </div>
+            </div>
+            <div className={style.textDownLogo}>{text}</div>
+          </div>
         </div>
       </div>
-      <div className={style.textDownLogo}>{text}</div>
     </div>
   );
 };
@@ -51,56 +65,28 @@ export const LandingBlock = () => {
         height: "100vh",
         overflow: "hidden",
       }}
+      data-section
+      data-bgcolor="transparent"
     >
-      <Swiper
-        modules={[Autoplay, EffectFade]}
-        effect="fade"
-        spaceBetween={50}
-        slidesPerView={1}
-        loop={true}
-        autoplay={{
-          delay: 3000,
-          disableOnInteraction: false,
-        }}
-        style={{ width: "100%", height: "100vh" }}
-      >
-        {videos.map((video, index) => (
-          <SwiperSlide key={index}>
-            <div
-              style={{ position: "relative", width: "100%", height: "100%" }}
-            >
-              <video
-                src={video.src}
-                autoPlay
-                loop
-                muted
-                style={{ width: "100%", height: "100%", objectFit: "cover" }}
-              />
-              <div className={style.overlay}>
-                <div className={style.container}>
-                  <Content text={video.text} />
-                </div>
-              </div>
-            </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
-      {!isMobile ? (
-        <Box
-          sx={{
-            position: "absolute",
-            top: "50%",
-            right: "5%",
-            transform: "translateY(-50%)",
-            width: { sm: "20%", xl: "30%", md: "30%" }, // Адаптивная ширина: 90% для моб., 50% для десктопа
-            padding: 4,
-            zIndex: 100,
-            borderRadius: 2,
-          }}
-        >
-          <CallOrderForm />
-        </Box>
-      ) : null}
+      <Element name="landing">
+        <Slider data={videos} Content={Content} autoplay={true} />
+        {!isMobile ? (
+          <Box
+            sx={{
+              position: "absolute",
+              top: "50%",
+              right: "5%",
+              transform: "translateY(-50%)",
+              width: { sm: "20%", xl: "30%", md: "30%" }, // Адаптивная ширина: 90% для моб., 50% для десктопа
+              padding: 4,
+              zIndex: 100,
+              borderRadius: 2,
+            }}
+          >
+            <CallOrderForm />
+          </Box>
+        ) : null}
+      </Element>
     </Box>
   );
 };

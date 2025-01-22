@@ -7,6 +7,8 @@ import paymentSVG from "../../icons/yuan-currency.svg";
 import globalSVG from "../../icons/global-trage.svg";
 import { ModalForm } from "../../components/modal-form";
 import { Element } from "react-scroll";
+import ship from "../../icons/ship.svg";
+import threeBoxes from "../../icons/three-boxes.svg";
 
 const cards = [
   {
@@ -61,6 +63,8 @@ export const DeliveryBlock = () => {
     >
       <div className={styles.section}>
         <h1 className={styles.title}>Почему выбирают нас</h1>
+        <img src={threeBoxes} alt="" className={styles.beautyImgTop} />
+        <img src={ship} alt="" className={styles.beautyImgBottom} />
         <div className={styles.container}>
           {cards.map((card, index) => (
             <div key={index} className={styles.card}>

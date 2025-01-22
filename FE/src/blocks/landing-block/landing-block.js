@@ -12,18 +12,15 @@ const videos = [
   {
     src: bridge,
     text: "«Time Transit» – компания с более чем 20-летним опытом в транспортных перевозках и логистике.",
-    // text: "Доставка грузов из Азии в Россию и страны СНГ с 1997 года",
   },
   {
     src: ship,
     text: "Мы обеспечиваем надежную доставку корреспонденции, товаров и грузов с полной прозрачностью и ответственностью.",
   },
-  // { src: ship, text: "Международная логистика на новом уровне" },
   {
     src: port,
     text: "Наша миссия - создавать удобные и безопасные логистические решения для клиентов, гарантируя индивидуальный подход.",
   },
-  // { src: port, text: "Мультимодальные перевозки — гибко и выгодно" },
 ];
 
 const Content = ({ item }) => {
@@ -47,7 +44,7 @@ const Content = ({ item }) => {
                 <h2 className={style.transit}>transit</h2>
               </div>
             </div>
-            <div className={style.textDownLogo}>{text}</div>
+            <div className={style.text}>{text}</div>
           </div>
         </div>
       </div>
@@ -69,7 +66,7 @@ export const LandingBlock = () => {
       data-bgcolor="transparent"
     >
       <Element name="landing">
-        <Slider data={videos} Content={Content} autoplay={true} />
+        <Slider data={videos} Content={Content} autoplay={false} />
         {!isMobile ? (
           <Box
             sx={{

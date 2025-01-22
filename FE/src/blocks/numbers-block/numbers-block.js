@@ -1,7 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import styles from "./index.module.css";
 import { Counter } from "../../components/counter";
-
+import boxes from "../../icons/boxes.svg";
+import boat from "../../icons/boat.svg";
 const stats = [
   { number: "20", label: "лет работы в логистике" },
   { number: "1000", label: "сотрудников" },
@@ -42,6 +43,8 @@ const NumbersBlock = () => {
       data-bgcolor="rgba(166, 34, 38, 0.9)"
       ref={ref}
     >
+      <img src={boxes} alt="" className={styles.beautyImgTop} />
+      <img src={boat} alt="" className={styles.beautyImgBottom} />
       <h1 className={styles.title}>Доверие, подтвержденное цифрами</h1>
       <div className={styles.stats}>
         {stats.map((stat, index) => (

@@ -8,13 +8,20 @@ import {
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
-import { headerItemsRus } from "../../constants";
+import { headerItems, headerTitles, scrollOptions } from "../../constants";
+import { scroller } from "react-scroll";
 
 export const MobileMenu = () => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
   const toggleDrawer = (open) => () => {
     setIsDrawerOpen(open);
+  };
+
+  const handleLinkClick = (name) => {
+    return () => {
+      scroller.scrollTo(name, scrollOptions);
+    };
   };
 
   return (
@@ -47,10 +54,11 @@ export const MobileMenu = () => {
 
           {/* Список навигации */}
           <List>
-            {headerItemsRus.map((text, index) => (
-              <ListItem button key={index} onClick={toggleDrawer(false)}>
+            {headerItems.map((item) => (
+              <ListItem button key={item} onClick={toggleDrawer(false)}>
                 <ListItemText
-                  primary={text.toUpperCase()}
+                  onClick={handleLinkClick(item)}
+                  primary={headerTitles[item].toUpperCase()}
                   sx={{ color: "#73080C", fontWeight: 700 }}
                 />
               </ListItem>

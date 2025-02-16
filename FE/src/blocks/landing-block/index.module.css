@@ -37,6 +37,7 @@
 
 .logoBlock{
     display: flex;
+    align-items: center;
 }
 
 .textBlock{
@@ -55,7 +56,7 @@
     margin: 0;
     font-weight: 800;
     font-size: 100px;
-    color: #a62226;
+    color: #c3202b;
     text-align: left;
 
 }
@@ -132,22 +133,29 @@
 
 @media (max-width: 480px) {
     .container {
-        top: 80%;
+        top: 30%;
     }
 
     .logo {
-        height: 140px;
+        height: 100px;
         margin-right: 12px;
     }
 
     .transit {
         font-size: 60px;
+        line-height: initial;
+        margin-top: -30px;
     }
 
     .textDownLogo {
         font-size: 20px;
         max-width: 300px;
         line-height: 26px;
+    }
+
+    .text {
+        max-width: 60%;
+        font-size: 20px;
     }
 
 }

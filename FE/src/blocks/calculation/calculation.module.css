@@ -126,10 +126,10 @@ input:focus {
 .button{
     width: 600px;
     height: 64px;
-    background: #A62226;
+    background: #c3202b;
     border-radius: 10px;
     stroke-width: 3px;
-    stroke: #a62226;
+    stroke: #c3202b;
     border: none;
     color: white;
     font-size: 30px;
@@ -195,10 +195,10 @@ input:focus {
     .button{
         width: 480px;
         height: 60px;
-        background: #A62226;
+        background: #c3202b;
         border-radius: 10px;
         stroke-width: 3px;
-        stroke: #a62226;
+        stroke: #c3202b;
         border: none;
         color: white;
         font-size: 28px;
@@ -244,10 +244,10 @@ input:focus {
     .button{
         width: 480px;
         height: 60px;
-        background: #A62226;
+        background: #c3202b;
         border-radius: 10px;
         stroke-width: 3px;
-        stroke: #a62226;
+        stroke: #c3202b;
         border: none;
         color: white;
         font-size: 28px;

@@ -1,0 +1,203 @@
+.blockContainer {
+    padding: 100px;
+}
+
+.section {
+    background-color: #f2f2f2;
+    border-radius: 16px;
+    padding: 40px 20px;
+    position: relative;
+}
+
+.title {
+    font-size: 40px;
+    margin: 40px 0 80px 0;
+    color: #c3202b;
+    text-align: center;
+}
+
+.description {
+    font-size: 14px;
+}
+
+/* Настройка Grid-контейнера для десктопа */
+.desktopContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+/* Индивидуальное правило для карточки "ВЭД под ключ" */
+.desktopContainer .card[data-title="ВЭД под ключ"] {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+/* Базовые стили карточки */
+.card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Анимация на hover — карточка приподнимается и увеличивается */
+.card:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* Стили для выделенных карточек */
+.highlight {
+    /* Выделенные карточки займут больше пространства */
+    grid-column: span 2;
+    grid-row: span 2;
+    /*border: 2px solid var(--accent-brand-color);*/
+    /*background: linear-gradient(135deg, #fff, #ffeaea);*/
+}
+
+/* Изображение в карточке */
+.image {
+    width: 100%;
+    height: 180px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+.cardTitle {
+    color: #c3202b;
+    font-size: 20px;
+}
+
+/* Кнопка */
+.button {
+    background-color: #c3202b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #8c1d1e;
+}
+
+/* Мобильный контейнер */
+.mobileContainer {
+    display: none;
+}
+
+/* Swiper стили */
+.swiper {
+    width: 100%;
+    padding: 20px 0;
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+}
+
+.beautyImgTop {
+    position: absolute;
+    top: -40px;
+    height: 120px;
+    left: -60px;
+}
+
+.beautyImgBottom {
+    position: absolute;
+    bottom: -40px;
+    height: 120px;
+    right: -60px;
+}
+
+/* Адаптация для планшетов */
+@media (max-width: 1024px) {
+    .desktopContainer {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+
+/* Адаптация для мобильных (Swiper) */
+@media (max-width: 768px) {
+    .desktopContainer {
+        display: none;
+    }
+
+    .mobileContainer {
+        display: block;
+    }
+
+    .swiper-slide .card {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .title {
+        font-size: 24px;
+    }
+
+    .cardTitle {
+        font-size: 18px;
+    }
+
+    .description {
+        font-size: 14x;
+    }
+
+    .button {
+        font-size: 14px;
+    }
+}
+
+/* Дополнительная адаптация для маленьких экранов */
+@media (max-width: 420px) {
+    .section {
+        padding: 12px 16px;
+    }
+
+    .title {
+        font-size: 20px;
+        margin: 12px 0 8px 0;
+    }
+
+    .cardTitle {
+        font-size: 14px;
+    }
+
+    .description {
+        font-size: 12px;
+    }
+
+    .button {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+
+    .beautyImgTop {
+        left: -16px;
+        top: -34px;
+        height: 60px;
+    }
+
+    .beautyImgBottom {
+        bottom: -16px;
+        height: 80px;
+        right: -16px;
+    }
+
+    .blockContainer {
+        padding: 34px 24px 24px 24px;
+    }
+}

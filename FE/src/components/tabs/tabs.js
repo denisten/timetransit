@@ -10,7 +10,7 @@ export const tabsTitles = [
 export const Tabs = ({ onChange, selectedItem }) => {
   return (
     <div className="tabs-layout__container">
-      <div className="tabs-layout service__buttons">
+      <div className="tabs-layout__buttons-container">
         {tabsTitles.map(({ text, id }) => (
           <button
             className={`tabs-layout__button tabs-layout__button${id === selectedItem ? "--active" : ""}`}

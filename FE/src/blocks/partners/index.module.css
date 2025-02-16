@@ -1,0 +1,115 @@
+.partnersSection {
+    padding: 50px 20px;
+    text-align: center;
+    background: linear-gradient(90deg, #c3202b, #e64a45);
+}
+
+.title {
+    color: #fff;
+    margin-bottom: 40px;
+    font-size: 28px;
+}
+
+/* Десктопная версия: сетка карточек */
+.logoGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    padding: 20px;
+}
+
+.logoItem {
+    position: relative;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.logoItem:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.logo {
+    max-width: 100%;
+    max-height: 100px;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+}
+
+/* Мобильная версия: автоскролл */
+.mobileScroller {
+    display: none;
+    overflow: hidden;
+    position: relative;
+    margin-top: 20px;
+}
+
+/* Мобильные стили активируются при ширине до 768px */
+@media (max-width: 768px) {
+    /* Скрываем десктопную сетку */
+    .logoGrid {
+        display: none;
+    }
+
+    .mobileScroller {
+        display: block;
+    }
+
+    /* Для непрерывного скролла используем inline-block и white-space */
+    .scrollerTrack {
+        display: inline-block;
+        white-space: nowrap;
+        animation: scroll 20s linear infinite;
+    }
+
+    /* Каждый логотип как inline-блок с margin-right вместо gap */
+    .logoItemMobile {
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 20px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 16px;
+        padding: 20px;
+    }
+
+    .logoMobile {
+        max-height: 60px;
+        vertical-align: middle;
+        object-fit: contain;
+        filter: brightness(0) invert(1);
+        min-height: 60px;
+    }
+
+    .title {
+        font-size: 24px;
+    }
+}
+
+/* Ключевые кадры для плавного автоскролла */
+/* При условии, что контент продублирован, при смещении на 50% ширины
+   первая копия полностью заменяется второй, что обеспечивает бесшовный цикл */
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+@media (max-width: 480px){
+    .title {
+        margin: 0;
+    }
+
+    .partnersSection {
+        padding: 20px 10px;
+    }
+}

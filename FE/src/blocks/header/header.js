@@ -8,26 +8,19 @@ import {
   isMobile,
   linksMap,
   mainPageBlocks,
+  scrollOptions,
 } from "../../constants";
-import { HeaderServices } from "../../components/header-services";
 import { MobileMenu } from "../../components/mobile-header/mobile-header";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useObserveScroll } from "../../hooks/use-observe-scroll";
-
-const scrollOptions = {
-  duration: 700,
-  delay: 100,
-  smooth: true,
-  offset: -100,
-};
 
 export const Header = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const isRootPage = location.pathname === "/";
-  const [bgColor, setBgColor] = useState(
-    "linear-gradient(90deg, #a62226, #000)",
-  ); // Начальный фон
+  // const [bgColor, setBgColor] = useState(
+  //   "linear-gradient(90deg, #c3202b, #000)",
+  // ); // Начальный фон
 
   const handleLinkClick = (name) => {
     const url = `/${linksMap[name] ?? ""}`;
@@ -51,10 +44,26 @@ export const Header = () => {
     }
   };
 
-  useObserveScroll(setBgColor);
+  // useObserveScroll(setBgColor);
+  const handleScroll = (e) => {
+    const header = document.getElementById("header-section");
+    const scrollTop = window.scrollY;
+    console.log({ scrollTop });
+    if (scrollTop >= 600) {
+      header?.classList.add(style.sticky);
+    } else {
+      header?.classList.remove(style.sticky);
+    }
+  };
 
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  });
   return (
-    <div className={style.container} style={{ backgroundColor: bgColor }}>
+    <div className={style.container} id="header-section">
       {isMobile ? (
         <MobileMenu />
       ) : (
@@ -68,7 +77,6 @@ export const Header = () => {
           {headerItems.map((item) => (
             <a onClick={handleLinkClick(item)}>{headerTitles[item]}</a>
           ))}
-          {/*<HeaderServices />*/}
         </div>
       )}
     </div>

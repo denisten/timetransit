@@ -41,25 +41,32 @@ export const OfficeMap = () => {
 
         <div className={style.infoBlock}>
           <p className={style.text}>
+            📍 <strong>Адрес:</strong> <br />
             г. Москва, ул. Ленинский пр-т, д.113/1, оф. Е310
           </p>
           <p className={style.text}>
-            Телефоны:
+            📞 <strong>Телефоны:</strong> <br />
+            <a href="tel:+74959692990" className={style.link}>
+              +7 (495) 969-29-90
+            </a>
             <br />
-            +7 (495) 969-29-90
+            <a href="tel:+74959692991" className={style.link}>
+              +7 (495) 969-29-91
+            </a>
             <br />
-            +7 (495) 969-29-91
-            <br />
-            +7 (495) 961-75-61
+            <a href="tel:+74959617561" className={style.link}>
+              +7 (495) 961-75-61
+            </a>
           </p>
           <p className={style.text}>
-            Почта:
-            <br />
+            📧 <strong>Почта:</strong> <br />
             <a href="mailto:info@timetransit.com" className={style.link}>
               info@timetransit.com
             </a>
           </p>
-          <p className={style.text}>Время работы: 9:00-18:00</p>
+          <p className={style.text}>
+            ⏰ <strong>Время работы:</strong> 9:00-18:00
+          </p>
         </div>
       </div>
     </Element>

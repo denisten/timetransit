@@ -79,7 +79,7 @@ export const CallOrderForm = () => {
           gutterBottom
           sx={{
             fontWeight: "bold",
-            color: "#a62226", // Цвет бренда
+            color: "#c3202b", // Цвет бренда
           }}
         >
           Ваш запрос
@@ -156,7 +156,7 @@ export const CallOrderForm = () => {
           fullWidth
           disabled={isSubmitting} // Блокируем кнопку во время отправки
           sx={{
-            backgroundColor: "#a62226",
+            backgroundColor: "#c3202b",
             "&:hover": {
               backgroundColor: "#922021",
             },

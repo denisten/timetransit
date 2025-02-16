@@ -11,7 +11,7 @@ const stats = [
   { number: "50", label: "партнёров по всему миру" },
 ];
 
-const NumbersBlock = () => {
+export const NumbersBlock = () => {
   const [visible, setVisible] = useState(false);
   const ref = useRef(null);
 
@@ -60,5 +60,3 @@ const NumbersBlock = () => {
     </section>
   );
 };
-
-export default NumbersBlock;

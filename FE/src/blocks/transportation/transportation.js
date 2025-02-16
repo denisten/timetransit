@@ -9,7 +9,7 @@ import { Slider } from "../../components/slider/slider";
 import { Tabs } from "../../components/tabs";
 import { tabsTitles } from "../../components/tabs/tabs";
 
-const data = [aviaMap, truckMap, trainMap, multiMap];
+const data = [truckMap, aviaMap, trainMap, multiMap];
 
 const SlideContent = ({ item }) => {
   return (
@@ -37,12 +37,12 @@ export const Transportation = () => {
           <h1 className={style.titleBlack}>Все виды</h1>
           <h1 className={style.titleRed}>транспортировки</h1>
         </div>
-        <div className={style.tabs}>
-          <Tabs
-            selectedItem={selectedItem}
-            onChange={handleSelectTransportationType}
-          />
-        </div>
+        {/*<div className={style.tabs}>*/}
+        <Tabs
+          selectedItem={selectedItem}
+          onChange={handleSelectTransportationType}
+        />
+        {/*</div>*/}
         <Slider
           isFullHeight={false}
           activeIndex={keys.indexOf(selectedItem)}

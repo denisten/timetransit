@@ -4,7 +4,7 @@ import { Counter } from "../../components/counter";
 import boxes from "../../icons/boxes.svg";
 import boat from "../../icons/boat.svg";
 const stats = [
-  { number: "20", label: "лет работы в логистике" },
+  { number: "25", label: "лет работы в логистике" },
   { number: "1000", label: "сотрудников" },
   { number: "10000", label: "успешных доставок в год" },
   { number: "500", label: "довольных клиентов" },

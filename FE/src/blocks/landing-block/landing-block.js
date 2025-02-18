@@ -11,7 +11,7 @@ import { Slider } from "../../components/slider/slider";
 const videos = [
   {
     src: bridge,
-    text: "«Time Transit» – компания с более чем 20-летним опытом в транспортных перевозках и логистике.",
+    text: "«Time Transit» – компания с более чем 25-летним опытом в транспортных перевозках и логистике.",
   },
   {
     src: ship,

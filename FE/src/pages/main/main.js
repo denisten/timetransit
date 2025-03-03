@@ -28,7 +28,7 @@ export const Main = () => {
         <AdvantagesBlock />
         <NumbersBlock />
         <Transportation />
-        <OfficeMap />
+        {/*<OfficeMap />*/}
         <Partners />
       </div>
     </motion.div>

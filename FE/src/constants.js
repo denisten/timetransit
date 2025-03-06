@@ -7,7 +7,7 @@ export const headerItems = [
   "landing",
   "advantages",
   "transportation",
-  // "contacts",
+  "contacts",
   "partners",
 ];
 
@@ -15,7 +15,7 @@ export const headerTitles = {
   landing: "ГЛАВНАЯ",
   advantages: "О КОМПАНИИ",
   transportation: "ТРАНСПОРТИРОВКА",
-  // contacts: "КОНТАКТЫ",
+  contacts: "КОНТАКТЫ",
   partners: "ПАРТНЕРЫ",
 };
 

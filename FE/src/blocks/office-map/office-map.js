@@ -28,10 +28,10 @@ export const OfficeMap = () => {
             {/* Метка на карте */}
             <Placemark
               geometry={officeCoords}
-              properties={{
-                balloonContent:
-                  "г. Москва, ул. Ленинский пр-т, д.113/1, оф. Е310",
-              }}
+              // properties={{
+              //   balloonContent:
+              //     "г. Москва, ул. Ленинский пр-т, д.113/1, оф. Е310",
+              // }}
               options={{
                 preset: "islands#redDotIcon", // Красная точка
               }}
@@ -40,10 +40,10 @@ export const OfficeMap = () => {
         </YMaps>
 
         <div className={style.infoBlock}>
-          <p className={style.text}>
-            📍 <strong>Адрес:</strong> <br />
-            г. Москва, ул. Ленинский пр-т, д.113/1, оф. Е310
-          </p>
+          {/*<p className={style.text}>*/}
+          {/*  📍 <strong>Адрес:</strong> <br />*/}
+          {/*  г. Москва, ул. Ленинский пр-т, д.113/1, оф. Е310*/}
+          {/*</p>*/}
           <p className={style.text}>
             📞 <strong>Телефоны:</strong> <br />
             <a href="tel:+74959692990" className={style.link}>

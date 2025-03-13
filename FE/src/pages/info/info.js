@@ -50,7 +50,7 @@ export const Info = () => {
         {/* Почта */}
         <Button
           component="a"
-          href="mailto:info@timetransit.com"
+          href="mailto:info@timetransit.ru"
           className={`${style.contactButton} ${style.email}`}
           startIcon={
             <span role="img" aria-label="Почта">
@@ -59,7 +59,7 @@ export const Info = () => {
           }
           variant="contained"
         >
-          info@timetransit.com
+          info@timetransit.ru
         </Button>
 
         {/* Сайт */}

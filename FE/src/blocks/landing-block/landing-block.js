@@ -9,17 +9,19 @@ import { Box } from "@mui/material";
 import { CallOrderForm } from "../../components/call-order-form";
 import { Slider } from "../../components/slider/slider";
 const videos = [
+
+    {
+        src: port,
+        text: "Более 25 лет осуществляем поиск и доставку товаров из Китая в Россию напрямую от производителя",
+    },
   {
     src: bridge,
-    text: "«Time Transit» – компания с более чем 25-летним опытом в транспортных перевозках и логистике.",
+      text: "Мы обеспечиваем надежную доставку корреспонденции, товаров и грузов с полной прозрачностью и ответственностью.",
+
   },
   {
     src: ship,
-    text: "Мы обеспечиваем надежную доставку корреспонденции, товаров и грузов с полной прозрачностью и ответственностью.",
-  },
-  {
-    src: port,
-    text: "Наша миссия - создавать удобные и безопасные логистические решения для клиентов, гарантируя индивидуальный подход.",
+      text: "Наша миссия - создавать удобные и безопасные логистические решения для клиентов, гарантируя индивидуальный подход.",
   },
 ];
 
@@ -66,7 +68,7 @@ export const LandingBlock = () => {
       data-bgcolor="transparent"
     >
       <Element name="landing">
-        <Slider data={videos} Content={Content} autoplay={false} />
+        <Slider data={videos} Content={Content} autoplay />
         {!isMobile ? (
           <Box
             sx={{

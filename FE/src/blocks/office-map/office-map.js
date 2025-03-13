@@ -60,8 +60,8 @@ export const OfficeMap = () => {
           </p>
           <p className={style.text}>
             📧 <strong>Почта:</strong> <br />
-            <a href="mailto:info@timetransit.com" className={style.link}>
-              info@timetransit.com
+            <a href="mailto:info@timetransit.ru" className={style.link}>
+              info@timetransit.ru
             </a>
           </p>
           <p className={style.text}>

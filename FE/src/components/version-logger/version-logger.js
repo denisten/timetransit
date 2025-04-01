@@ -6,6 +6,7 @@ export function VersionLogger() {
             .then((res) => res.json())
             .then((data) => {
                 console.log(
+
                     `%c🛠️ Build version: ${data.version} — ${data.timestamp}`,
                     "color: green; font-weight: bold;"
                 );

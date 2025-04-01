@@ -28,39 +28,52 @@ const videos = [
 
 const Content = ({ item }) => {
   const { src, text } = item;
+    const isMobile = window.innerWidth < 600;
+
     useEffect(() => {
-        setTimeout(() => {
-            const video = document.getElementById('hero-video');
-            video?.load();
-        }, 3000);
-    }, []);
+        if (!isMobile) {
+            setTimeout(() => {
+                const video = document.getElementById("hero-video");
+                video?.load();
+            }, 3000);
+        }
+    }, [isMobile]);
   return (
-    <div style={{ position: "relative", width: "100%", height: "100%" }}>
-      <video
-        src={src}
-        autoPlay
-        loop
-        poster="/images/video-poster.png"
-        muted
-        id="hero-video"
-        preload="none"
-        style={{ width: "100%", height: "100%", objectFit: "cover" }}
-      />
-      <div className={style.overlay}>
-        <div className={style.container}>
-          <div className={style.contentContainer}>
-            <div className={style.logoBlock}>
-              <img className={style.logo} src={logo} alt="logo" />
-              <div className={style.textBlock}>
-                <h1 className={style.time}>TIME</h1>
-                <h2 className={style.transit}>transit</h2>
+      <div style={{ position: "relative", width: "100%", height: "100%" }}>
+          {isMobile ? (
+              <img
+                  src="/images/video-poster.png"
+                  alt="hero"
+                  style={{ width: "100%", height: "100%", objectFit: "cover" }}
+              />
+          ) : (
+              <video
+                  src={src}
+                  autoPlay
+                  loop
+                  muted
+                  preload="none"
+                  poster="/images/video-poster.png"
+                  id="hero-video"
+                  style={{ width: "100%", height: "100%", objectFit: "cover" }}
+              />
+          )}
+
+          <div className={style.overlay}>
+              <div className={style.container}>
+                  <div className={style.contentContainer}>
+                      <div className={style.logoBlock}>
+                          <img className={style.logo} src={logo} alt="logo" />
+                          <div className={style.textBlock}>
+                              <h1 className={style.time}>TIME</h1>
+                              <h2 className={style.transit}>transit</h2>
+                          </div>
+                      </div>
+                      <div className={style.text}>{text}</div>
+                  </div>
               </div>
-            </div>
-            <div className={style.text}>{text}</div>
           </div>
-        </div>
       </div>
-    </div>
   );
 };
 

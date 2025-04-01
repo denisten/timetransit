@@ -32,9 +32,9 @@ services:
       - "80:80"
       - "443:443"
     volumes:
-      - /etc/letsencrypt:/etc/letsencrypt:ro
+#      - /etc/letsencrypt:/etc/letsencrypt:ro
       - frontend_build:/usr/share/nginx/html # Подключаем volume из фронтенда
-#      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
     depends_on:
       - backend
       - frontend

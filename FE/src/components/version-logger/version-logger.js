@@ -11,6 +11,7 @@ export function VersionLogger() {
                 );
 
 
+
             })
             .catch(() => {
                 console.warn("⚠️ Build version info not available");

@@ -10,6 +10,7 @@ export function VersionLogger() {
                     "color: green; font-weight: bold;"
                 );
 
+
             })
             .catch(() => {
                 console.warn("⚠️ Build version info not available");

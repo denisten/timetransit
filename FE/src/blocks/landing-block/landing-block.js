@@ -8,6 +8,7 @@ import { Box } from "@mui/material";
 
 import { CallOrderForm } from "../../components/call-order-form";
 import { Slider } from "../../components/slider/slider";
+import {useEffect} from "react";
 const videos = [
 
     {
@@ -27,13 +28,22 @@ const videos = [
 
 const Content = ({ item }) => {
   const { src, text } = item;
+    useEffect(() => {
+        setTimeout(() => {
+            const video = document.getElementById('hero-video');
+            video?.load();
+        }, 3000);
+    }, []);
   return (
     <div style={{ position: "relative", width: "100%", height: "100%" }}>
       <video
         src={src}
         autoPlay
         loop
+        poster="/images/video-poster.png"
         muted
+        id="hero-video"
+        preload="none"
         style={{ width: "100%", height: "100%", objectFit: "cover" }}
       />
       <div className={style.overlay}>

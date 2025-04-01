@@ -132,7 +132,15 @@
 
 @media (max-width: 480px) {
     .container {
-        top: 30%;
+        width: 90%;
+    }
+    .textBlock {
+        right: 56px;
+        bottom: 0;
+    }
+
+    .container {
+        top: 40%;
     }
 
     .logo {
@@ -153,7 +161,8 @@
     }
 
     .text {
-        max-width: 60%;
+        max-width: 54%;
+        margin-left: 36px;
         font-size: 20px;
     }
 

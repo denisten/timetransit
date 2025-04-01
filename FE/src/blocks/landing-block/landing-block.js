@@ -1,5 +1,5 @@
 import style from "./index.module.css";
-import logo from "../../images/logo.png";
+import logo from "../../images/logo.svg";
 import { Element } from "react-scroll";
 import bridge from "../../videos/slider-video-cargo-port-with-bridge.mp4";
 import ship from "../../videos/slider-video-ship.mp4";
@@ -68,7 +68,7 @@ export const LandingBlock = () => {
       data-bgcolor="transparent"
     >
       <Element name="landing">
-        <Slider data={videos} Content={Content} autoplay />
+        <Slider data={videos} Content={Content} autoplay={false} />
         {!isMobile ? (
           <Box
             sx={{

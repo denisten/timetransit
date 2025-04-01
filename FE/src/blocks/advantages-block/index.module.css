@@ -95,6 +95,7 @@
 /* Мобильный контейнер */
 .mobileContainer {
     display: none;
+    position: relative;
 }
 
 /* Swiper стили */
@@ -153,7 +154,7 @@
     }
 
     .description {
-        font-size: 14x;
+        font-size: 14px;
     }
 
     .button {
@@ -199,5 +200,81 @@
 
     .blockContainer {
         padding: 34px 24px 24px 24px;
+    }
+}
+@media (max-width: 1024px) and (min-width: 769px) {
+    .desktopContainer {
+        grid-template-columns: repeat(2, 1fr); /* фиксированное количество колонок */
+        gap: 24px;
+        padding: 0 16px;
+        max-width: 100%;
+    }
+
+    .highlight {
+        grid-column: span 1 !important;
+        grid-row: span 1 !important;
+    }
+
+    .highlightSmall {
+        grid-column: span 1 !important;
+        grid-row: span 1 !important;
+    }
+    .card {
+        font-size: 14px;
+    }
+
+    .cardTitle {
+        font-size: 18px;
+    }
+
+    .image {
+        height: 150px;
+    }
+
+    .description {
+        font-size: 13px;
+    }
+
+    .button {
+        font-size: 14px;
+    }
+}
+@media (min-width: 1025px) and (max-width: 1366px) {
+    .desktopContainer {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+        padding: 0 24px;
+    }
+
+    .card {
+        padding: 20px;
+        font-size: 15px;
+    }
+
+    .cardTitle {
+        font-size: 20px;
+    }
+
+    .image {
+        height: 160px;
+    }
+
+    .description {
+        font-size: 14px;
+    }
+
+    .button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+
+    .highlight {
+        grid-column: span 1 !important;
+        grid-row: span 1 !important;
+    }
+
+    .highlightSmall {
+        grid-column: span 1 !important;
+        grid-row: span 1 !important;
     }
 }

@@ -1,0 +1,9 @@
+@media (max-width: 768px) {
+    .swiper-button-next,
+    .swiper-button-prev {
+        color: #C3202B;
+    }
+    .swiper-pagination-bullet {
+        display: none;
+    }
+}

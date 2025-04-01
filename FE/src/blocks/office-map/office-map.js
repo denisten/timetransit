@@ -10,13 +10,14 @@ export const OfficeMap = () => {
     center: officeCoords, // Координаты офиса
     zoom: 16, // Уровень масштабирования
   };
-
   return (
     <Element name="contacts" className={style.container}>
       <h1 className={style.title}>Контакты</h1>
 
       <div className={style.contentContainer}>
         {/* Яндекс.Карта */}
+        {/*<div className={style.mapWrapper}>*/}
+
         <YMaps>
           <Map
             defaultState={mapState}
@@ -37,6 +38,7 @@ export const OfficeMap = () => {
               }}
             />
           </Map>
+          {/*</div>*/}
         </YMaps>
 
         <div className={style.infoBlock}>

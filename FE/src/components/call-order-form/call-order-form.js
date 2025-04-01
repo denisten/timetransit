@@ -96,9 +96,9 @@ export const CallOrderForm = () => {
           sx={{ marginBottom: 2 }}
         />
 
-        {/* Имя клиента */}
+        {/* Имя */}
         <TextField
-          label="Имя клиента"
+          label="Имя"
           name="name"
           value={formData.name}
           onChange={handleChange}

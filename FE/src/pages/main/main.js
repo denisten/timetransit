@@ -9,6 +9,7 @@ import { NumbersBlock } from "../../blocks/numbers-block";
 import { AdvantagesBlock } from "../../blocks/advantages-block";
 import { Partners } from "../../blocks/partners";
 import { Transportation } from "../../blocks/transportation";
+import {CertificateBlock} from "../../blocks/certificates-block/certificate";
 
 export const Main = () => {
   const isMobile = window.innerWidth < 480;
@@ -28,6 +29,7 @@ export const Main = () => {
         <AdvantagesBlock />
         <NumbersBlock />
         <Transportation />
+        <CertificateBlock/>
         <OfficeMap />
         <Partners />
       </div>

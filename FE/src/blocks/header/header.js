@@ -1,5 +1,5 @@
 import style from "./header.module.css";
-import logo from "../../images/logo.png";
+import logo from "../../images/logo.svg";
 import { useLocation, useNavigate } from "react-router-dom";
 import { scroller } from "react-scroll";
 import {
@@ -48,7 +48,6 @@ export const Header = () => {
   const handleScroll = (e) => {
     const header = document.getElementById("header-section");
     const scrollTop = window.scrollY;
-    console.log({ scrollTop });
     if (scrollTop >= 600) {
       header?.classList.add(style.sticky);
     } else {

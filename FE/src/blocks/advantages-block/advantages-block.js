@@ -16,6 +16,7 @@ import warehouseClockSVG from "../../icons/warehouse-clock.svg";
 import { ModalForm } from "../../components/modal-form";
 import threeBoxesSVG from "../../icons/three-boxes.svg";
 import shipSVG from "../../icons/ship.svg";
+import ScrollAnimation from "react-animate-on-scroll";
 
 const cards = [
   {
@@ -99,7 +100,9 @@ export const AdvantagesBlock = () => {
               cardClass = `${styles.card} ${styles.highlight}`;
             }
             return (
-              <div key={index} className={cardClass}>
+                <ScrollAnimation key={card.title} animateIn={`animate__fadeIn${index % 2 ? "Right" : "Left"}Big`}
+                                 animateOnce={true} className={cardClass}>
+              <div>
                 <img
                   src={card.image}
                   alt={card.title}
@@ -114,6 +117,7 @@ export const AdvantagesBlock = () => {
                   Подробнее
                 </button>
               </div>
+                 </ScrollAnimation>
             );
           })}
         </div>

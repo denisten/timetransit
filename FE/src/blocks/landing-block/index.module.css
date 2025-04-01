@@ -49,7 +49,6 @@
 .logo{
     height: 180px;
     display: flex;
-    margin-right: 20px;
 }
 
 .time{
@@ -159,6 +158,16 @@
     }
 
 }
+@media (min-width: 1025px) and (max-width: 1366px) {
+    .textBlock {
+        right: 77px;
+        bottom: 25px;
+    }
+    .text {
+        margin-left: 100px;
+    }
 
-@media (max-width: 320px) {
+    .container {
+        width: 96%;
+    }
 }

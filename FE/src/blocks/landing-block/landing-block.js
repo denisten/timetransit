@@ -43,8 +43,11 @@ const Content = ({ item }) => {
           {isMobile ? (
               <img
                   src="/images/hero.webp"
+                  srcset="/images/hero-small.webp 600w, /images/hero.webp 1200w"
+                  sizes="(max-width: 600px) 600px, 1200px"
                   alt="hero"
                   style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                  loading="lazy"
               />
           ) : (
               <video
@@ -91,7 +94,7 @@ export const LandingBlock = () => {
       data-bgcolor="transparent"
     >
       <Element name="landing">
-        <Slider data={videos} Content={Content} autoplay={false} />
+        <Slider data={videos} Content={Content} autoplay />
         {!isMobile ? (
           <Box
             sx={{

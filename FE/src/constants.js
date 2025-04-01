@@ -10,7 +10,7 @@ export const headerItems = [
   "contacts",
   "partners",
 ];
-console.log('debug webhook')
+console.log('debug webhook 2')
 export const headerTitles = {
   landing: "ГЛАВНАЯ",
   advantages: "О КОМПАНИИ",

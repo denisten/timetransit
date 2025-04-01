@@ -25,6 +25,7 @@ export const CertificateBlock = () => {
                 animateIn={`animate__fadeInRight`}
                 animateOnce={true}>
                 <img
+                    loading="lazy"
                     src="/images/certificate-transrussia.png"
                     alt="Сертификат участия в выставке TransRussia"
                     className={styles.certificateImage}

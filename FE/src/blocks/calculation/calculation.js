@@ -12,8 +12,8 @@ export const Calculation = () => {
             <span className={style.titleBlack}>Рассчитать</span>
             <span className={style.titleRed}>стоимость</span>
           </div>
-          <img className={style.back} src={back} alt="" />
-          <img className={style.img} src={calculation} alt="" />
+          <img className={style.back} src={back} alt="" loading="lazy" />
+          <img className={style.img} src={calculation} alt="" loading="lazy" />
 
           <div className={style.formContainer}>
             <div className={style.typesContainer}>

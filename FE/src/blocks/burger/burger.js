@@ -18,10 +18,10 @@ export const Burger = () => {
           <div className={style.text}>Услуги</div>
           <div className={style.containerBtn}>
             <button className={style.button}>Позвонить</button>
-            <img className={style.telegram} src={telegram} alt="" />
+            <img className={style.telegram} src={telegram} alt="" loading="lazy"/>
           </div>
         </div>
-        <img className={style.draw} src={draw} alt="" />
+        <img className={style.draw} src={draw} alt="" loading="lazy"/>
       </div>
     </Element>
   );

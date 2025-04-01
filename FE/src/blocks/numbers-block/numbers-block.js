@@ -43,8 +43,8 @@ export const NumbersBlock = () => {
       data-bgcolor="rgba(166, 34, 38, 0.9)"
       ref={ref}
     >
-      <img src={boxes} alt="" className={styles.beautyImgTop} />
-      <img src={boat} alt="" className={styles.beautyImgBottom} />
+      <img loading="lazy" src={boxes} alt="" className={styles.beautyImgTop} />
+      <img loading="lazy" src={boat} alt="" className={styles.beautyImgBottom} />
       <h1 className={styles.title}>Доверие, подтвержденное цифрами</h1>
       <div className={styles.stats}>
         {stats.map((stat, index) => (

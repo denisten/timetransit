@@ -14,7 +14,7 @@ const data = [truckMap, aviaMap, trainMap, multiMap];
 const SlideContent = ({ item }) => {
   return (
     <div className={style.sliderContainer}>
-      <img alt="" src={item} className={style.sliderImg} />
+      <img loading="lazy" alt="" src={item} className={style.sliderImg} />
     </div>
   );
 };

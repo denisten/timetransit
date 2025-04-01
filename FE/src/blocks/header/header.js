@@ -68,6 +68,7 @@ export const Header = () => {
       ) : (
         <div className={style.linksContainer}>
           <img
+              loading="lazy"
             src={logo}
             alt=""
             className={style.logo}

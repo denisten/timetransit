@@ -63,7 +63,7 @@ const Content = ({ item }) => {
               <div className={style.container}>
                   <div className={style.contentContainer}>
                       <div className={style.logoBlock}>
-                          <img className={style.logo} src={logo} alt="logo" />
+                          <img className={style.logo} src={logo} alt="logo" loading="lazy" />
                           <div className={style.textBlock}>
                               <h1 className={style.time}>TIME</h1>
                               <h2 className={style.transit}>transit</h2>

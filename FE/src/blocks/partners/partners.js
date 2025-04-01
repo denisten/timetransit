@@ -30,7 +30,7 @@ export const Partners = () => {
             <div className={style.logoGrid}>
                 {partnerLogos.map((logo, index) => (
                     <div key={index} className={style.logoItem}>
-                        <img src={logo} alt="Логотип партнёра" className={style.logo} />
+                        <img loading="lazy" src={logo} alt="Логотип партнёра" className={style.logo} />
                     </div>
                 ))}
             </div>
@@ -41,6 +41,7 @@ export const Partners = () => {
                     {[...partnerLogos, ...partnerLogos].map((logo, index) => (
                         <div key={index} className={style.logoItemMobile}>
                             <img
+                                loading="lazy"
                                 src={logo}
                                 alt="Логотип партнёра"
                                 className={style.logoMobile}

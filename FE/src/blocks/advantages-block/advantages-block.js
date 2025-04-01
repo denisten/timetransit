@@ -86,8 +86,8 @@ export const AdvantagesBlock = () => {
       data-bgcolor="rgba(166, 34, 38, 0.9)"
     >
       <div className={styles.section}>
-        <img src={threeBoxesSVG} alt="" className={styles.beautyImgTop} />
-        <img src={shipSVG} alt="" className={styles.beautyImgBottom} />
+        <img loading="lazy" src={threeBoxesSVG} alt="" className={styles.beautyImgTop} />
+        <img loading="lazy" src={shipSVG} alt="" className={styles.beautyImgBottom} />
         <h1 className={styles.title}>Почему выбирают нас</h1>
 
         {/* Десктоп — журналоподобное расположение карточек */}
@@ -104,6 +104,7 @@ export const AdvantagesBlock = () => {
                                  animateOnce={true} className={cardClass}>
               <div>
                 <img
+                    loading="lazy"
                   src={card.image}
                   alt={card.title}
                   className={styles.image}
@@ -145,6 +146,7 @@ export const AdvantagesBlock = () => {
                 <SwiperSlide key={index}>
                   <div className={cardClass}>
                     <img
+                        loading="lazy"
                       src={card.image}
                       alt={card.title}
                       className={styles.image}

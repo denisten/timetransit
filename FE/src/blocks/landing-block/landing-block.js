@@ -42,7 +42,7 @@ const Content = ({ item }) => {
       <div style={{ position: "relative", width: "100%", height: "100%" }}>
           {isMobile ? (
               <img
-                  src="/images/video-poster.png"
+                  src="/images/hero.webp"
                   alt="hero"
                   style={{ width: "100%", height: "100%", objectFit: "cover" }}
               />
@@ -53,7 +53,7 @@ const Content = ({ item }) => {
                   loop
                   muted
                   preload="none"
-                  poster="/images/video-poster.png"
+                  poster="/images/hero.webp"
                   id="hero-video"
                   style={{ width: "100%", height: "100%", objectFit: "cover" }}
               />

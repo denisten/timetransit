@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styles from "./index.module.css";
 import { Element } from "react-scroll";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination } from "swiper/modules";
+import { Pagination, Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -86,8 +86,18 @@ export const AdvantagesBlock = () => {
       data-bgcolor="rgba(166, 34, 38, 0.9)"
     >
       <div className={styles.section}>
-        <img loading="lazy" src={threeBoxesSVG} alt="" className={styles.beautyImgTop} />
-        <img loading="lazy" src={shipSVG} alt="" className={styles.beautyImgBottom} />
+        <img
+          loading="lazy"
+          src={threeBoxesSVG}
+          alt=""
+          className={styles.beautyImgTop}
+        />
+        <img
+          loading="lazy"
+          src={shipSVG}
+          alt=""
+          className={styles.beautyImgBottom}
+        />
         <h1 className={styles.title}>Почему выбирают нас</h1>
 
         {/* Десктоп — журналоподобное расположение карточек */}
@@ -100,25 +110,29 @@ export const AdvantagesBlock = () => {
               cardClass = `${styles.card} ${styles.highlight}`;
             }
             return (
-                <ScrollAnimation key={card.title} animateIn={`animate__fadeIn${index % 2 ? "Right" : "Left"}Big`}
-                                 animateOnce={true} className={cardClass}>
-              <div>
-                <img
+              <ScrollAnimation
+                key={card.title}
+                animateIn={`animate__fadeIn${index % 2 ? "Right" : "Left"}Big`}
+                animateOnce={true}
+                className={cardClass}
+              >
+                <div>
+                  <img
                     loading="lazy"
-                  src={card.image}
-                  alt={card.title}
-                  className={styles.image}
-                />
-                <h2 className={styles.cardTitle}>{card.title}</h2>
-                <p className={styles.description}>{card.description}</p>
-                <button
-                  className={styles.button}
-                  onClick={() => setIsModalOpen(true)}
-                >
-                  Подробнее
-                </button>
-              </div>
-                 </ScrollAnimation>
+                    src={card.image}
+                    alt={card.title}
+                    className={styles.image}
+                  />
+                  <h2 className={styles.cardTitle}>{card.title}</h2>
+                  <p className={styles.description}>{card.description}</p>
+                  <button
+                    className={styles.button}
+                    onClick={() => setIsModalOpen(true)}
+                  >
+                    Подробнее
+                  </button>
+                </div>
+              </ScrollAnimation>
             );
           })}
         </div>
@@ -146,7 +160,7 @@ export const AdvantagesBlock = () => {
                 <SwiperSlide key={index}>
                   <div className={cardClass}>
                     <img
-                        loading="lazy"
+                      loading="lazy"
                       src={card.image}
                       alt={card.title}
                       className={styles.image}

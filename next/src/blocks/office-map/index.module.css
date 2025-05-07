@@ -1,0 +1,113 @@
+.container {
+    margin: 100px 0 0 0;
+}
+
+.title {
+    font-size: 60px;
+    color: #c3202b;
+    text-align: center;
+}
+
+/* Контейнер с картой и инфоблоком */
+.contentContainer {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 500px;
+    margin: 100px 0;
+}
+
+/* Карта */
+.map {
+    width: calc(100% - 320px); /* Карта занимает оставшееся место */
+    height: 100%; /* Карта на всю высоту */
+    pointer-events: none;
+
+}
+
+/* Инфоблок */
+.infoBlock {
+    width: 320px; /* Фиксированная ширина */
+    height: 100%;
+    background: #c3202b;
+    color: #fff;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+}
+
+/* Текст */
+.text {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+/* Ссылки */
+.link {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.link:hover {
+    color: #ffdddd;
+    text-decoration: underline;
+}
+
+/* 📌 Адаптация для планшетов и мобильных */
+@media (max-width: 768px) {
+    .contentContainer {
+        flex-direction: column;
+        height: auto;
+        align-items: center;
+    }
+
+    .map {
+        width: 100%;
+        height: 300px; /* Высота карты уменьшается */
+    }
+
+    .infoBlock {
+        width: 100%;
+        height: auto; /* Высота адаптируется */
+        padding: 30px;
+        text-align: center;
+    }
+}
+
+/* 📌 Адаптация для мобильных устройств (телефоны) */
+@media (max-width: 480px) {
+    .contentContainer {
+        margin: 20px 0 60px;
+    }
+
+    .container {
+        margin: 50px 0 0 0;
+    }
+
+    .title {
+        font-size: 36px;
+    }
+
+    .map {
+        height: 250px; /* Уменьшаем высоту карты */
+    }
+
+    .infoBlock {
+        padding: 20px;
+    }
+
+    .text {
+        font-size: 14px;
+    }
+
+    .link {
+        font-size: 14px;
+    }
+}

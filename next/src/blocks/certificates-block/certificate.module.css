@@ -1,0 +1,43 @@
+.certificateSection {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #f9f9f9;
+    position: relative;
+}
+
+.sectionTitle {
+    font-size: 28px;
+    color: #111;
+    margin-bottom: 16px;
+}
+
+.sectionText {
+    font-size: 16px;
+    color: #333;
+    max-width: 640px;
+    margin: 0 auto 32px;
+    line-height: 1.6;
+}
+
+.certificateImage {
+    width: 100%;
+    max-width: 520px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+/* Акцентные слова */
+.highlight {
+    color: #c3202b;
+    font-weight: 600;
+}
+
+/* Декоративная линия */
+.divider {
+    width: 80px;
+    height: 4px;
+    background-color: #c3202b;
+    margin: 0 auto 20px;
+    border-radius: 2px;
+}

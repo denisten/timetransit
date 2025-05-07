@@ -1,0 +1,66 @@
+.container{
+    justify-content: start;
+    align-items: center;
+    /*padding: 16px 80px;*/
+    padding: 0.5rem 2rem 0.5rem 4rem;
+    z-index: 1000;
+    transition: .3s ease-in-out all;
+    position: fixed;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.sticky {
+    background: rgba(166, 34, 38, 0.9);
+    padding: 1rem 6rem;
+}
+
+.linksContainer {
+    display: flex;
+    font-size: 20px;
+    color: #fff;
+    align-items: center;
+}
+
+.linksContainer a {
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+    margin: 0 20px;
+    padding: 6px 0;
+    box-sizing: border-box;
+}
+
+.linksContainer a:hover {
+    scale: 1.1;
+    color: #D50000;
+}
+
+.logo {
+    height: 40px;
+    margin-right: 40px;
+    cursor: pointer;
+}
+
+@media (max-width: 1440px) {
+    .container {
+        font-size: 24px;
+    }
+}
+
+
+@media (max-width: 1080px) {
+    .container {
+        padding: 16px 40px;
+    }
+    .linksContainer {
+        font-size: 20px;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .linksContainer {
+        font-size: 12px;
+    }
+}

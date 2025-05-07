@@ -1,0 +1,131 @@
+.container{
+    margin-bottom: 150px;
+}
+
+.title {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    margin-top: 150px;
+}
+
+.titleBlack{
+    text-align: center;
+    color: #000;
+    font-size: 60px;
+}
+
+.titleRed{
+    text-align: center;
+    color: #c3202b;
+    font-size: 60px;
+}
+
+.sliderImg {
+    max-width: 80%; /* Устанавливаем максимальную ширину 100% от контейнера */
+    max-height: 100%; /* Устанавливаем максимальную высоту 100% от контейнера */
+    width: auto; /* Адаптивная ширина */
+    height: auto; /* Адаптивная высота */
+    object-fit: contain; /* Умещает изображение внутри блока, сохраняя пропорции */
+    margin: 0 auto; /* Центрируем изображение */
+    display: block; /* Убираем возможные inline эффекты */
+}
+
+.sliderContainer {
+    width: 100%; /* Полная ширина контейнера */
+    height: 80%; /* Высота экрана минус отступы (например, 150px для заголовка) */
+    display: flex;
+    align-items: center; /* Центрируем изображение по вертикали */
+    justify-content: center; /* Центрируем изображение по горизонтали */
+}
+
+@media (max-width: 1080px) {
+    .container{
+        margin-top: 100px;
+    }
+
+    .titleBlack {
+        font-size: 50px;
+    }
+
+    .titleRed{
+        font-size: 50px;
+    }
+
+    .sliderImg {
+        height: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .container{
+        margin-top: 100px;
+    }
+
+    .titleBlack {
+        font-size: 40px;
+    }
+
+    .titleRed{
+        font-size: 40px;
+    }
+
+
+    .sliderImg {
+        max-width: 90%; /* Уменьшаем ширину для мобильных устройств */
+        max-height: 70%; /* Ограничиваем высоту */
+    }
+
+    .sliderContainer {
+        height: auto;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .sliderImg {
+        width: 400px;
+        height: auto;
+    }
+
+    .title{
+        margin-top: 80px;
+        gap: 0;
+        flex-direction: column;
+    }
+
+    .container{
+        margin-bottom: 50px;
+    }
+
+    .titleBlack{
+        font-size: 28px;
+        margin: 0;
+    }
+
+    .titleRed{
+        font-size: 28px;
+        margin: 0 0 20px 0;
+    }
+
+}
+
+
+@media (max-width: 320px) {
+    .container{
+        margin-bottom: 30px;
+    }
+
+    .title{
+        gap: 8px;
+        margin-top: 70px;
+    }
+
+    .titleBlack{
+        font-size: 22px;
+    }
+
+    .titleRed{
+        font-size: 22px;
+    }
+}

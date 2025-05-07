@@ -1,0 +1,61 @@
+:root {
+    --accent-brand-color: #c3202b;
+    --text-invert-color: #fff;
+    --bg-secondary-color: #f5f5f5;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.buttonsContainer {
+    display: flex;
+    gap: 16px;
+}
+
+.button {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    background-color: transparent;
+    border: 0;
+    border-radius: 32px;
+    color: inherit;
+    cursor: pointer;
+    display: block;
+    line-height: 20px;
+    font-weight: bold;
+    margin: 0;
+    padding: 10px 16px;
+    transition: all 0.15s ease-out;
+    white-space: nowrap;
+    box-sizing: border-box;
+}
+
+.buttonText {
+    font-size: 16px;
+}
+
+.active {
+    background-color: var(--accent-brand-color);
+    color: var(--text-invert-color);
+}
+
+@media (max-width: 480px) {
+    .buttonsContainer {
+        flex-direction: row;
+        gap: 4px;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+
+    .buttonsContainer::-webkit-scrollbar {
+        display: none;
+    }
+
+    .button {
+        white-space: nowrap;
+    }
+}

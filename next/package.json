@@ -1,0 +1,36 @@
+{
+  "name": "next",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "postbuild": "next-sitemap"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@mui/icons-material": "^6.3.1",
+    "@mui/material": "^6.3.1",
+    "@mui/styles": "^6.3.1",
+    "@pbe/react-yandex-maps": "^1.2.5",
+    "framer-motion": "^12.6.3",
+    "next": "15.2.4",
+    "next-sitemap": "^4.2.3",
+    "react": "^18.3.1",
+    "react-animate-on-scroll": "^2.1.5",
+    "react-dom": "^18.3.1",
+    "react-input-mask": "^3.0.0-alpha.2",
+    "react-scroll": "^1.9.0",
+    "swiper": "^9.4.1"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@tailwindcss/postcss": "^4",
+    "eslint": "^9",
+    "eslint-config-next": "15.2.4",
+    "tailwindcss": "^4"
+  }
+}

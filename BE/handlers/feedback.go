@@ -12,8 +12,13 @@ import (
 
 func HandleFeedback(cfg config.Config) gin.HandlerFunc {
 	return func(c *gin.Context) {
+        // Проверка test=test для интеграции с Tilda
+	    if c.PostForm("test") == "test" {
+    			c.String(http.StatusOK, "ok")
+    			return
+    		}
 		var feedback models.Feedback
-		if err := c.ShouldBindJSON(&feedback); err != nil {
+		if err := c.ShouldBind(&feedback); err != nil {
 			c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 			return
 		}

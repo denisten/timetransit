@@ -1,8 +1,8 @@
 package models
 
 type Feedback struct {
-	Country string `json:"country" binding:"required"`
-	Name    string `json:"name" binding:"required"`
-	Phone   string `json:"phone" binding:"required"`
-	Comment string `json:"comment" binding:"required"`
+	Country  string `json:"country" form:"country"`
+	Name     string `json:"name" form:"name"`
+	Phone    string `json:"phone" form:"phone"`
+	Comment  string `json:"comment" form:"comment"`
 }

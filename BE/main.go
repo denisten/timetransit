@@ -30,7 +30,7 @@ func main() {
 	router := gin.Default()
 	router.Use(CORSMiddleware())
 	router.POST("/api/feedback", handlers.HandleFeedback(cfg))
-	router.GET("/api/health", handlers.HealthCheckHandler())
+	router.GET("/api/health", handlers.HealthCheckHandler)
 
 	log.Println("Listening on port " + cfg.Port)
 	err := router.Run(":" + cfg.Port)

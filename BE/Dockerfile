@@ -2,6 +2,7 @@
 
 # Этап сборки
 FROM golang:1.20-alpine AS build
+RUN apt-get update && apt-get install -y curl
 ENV GOPROXY=https://goproxy.io,direct
 WORKDIR /app
 COPY go.mod go.sum ./

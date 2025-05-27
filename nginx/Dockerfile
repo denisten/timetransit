@@ -1,5 +1,6 @@
 # Базовый образ Nginx
 FROM nginx:stable-alpine
+RUN apt-get update && apt-get install -y curl
 
 # Копируем ваш конфигурационный файл
 COPY default.conf /etc/nginx/conf.d/default.conf

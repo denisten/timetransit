@@ -13,6 +13,12 @@ services:
       - web_net
     volumes:
       - /etc/letsencrypt:/etc/letsencrypt:ro
+    restart: always
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:8080/api/healthcheck" ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
 
   frontend:
     build:
@@ -23,6 +29,12 @@ services:
       - web_net
     volumes:
       - frontend_build:/usr/share/nginx/html # Раздача статики через volume
+    restart: always
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost" ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
 
   nginx:
     build:

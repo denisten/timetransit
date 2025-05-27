@@ -2,6 +2,7 @@
 
 # Этап сборки (builder)
 FROM node:18-alpine AS build
+RUN apt-get update && apt-get install -y curl
 WORKDIR /app
 COPY package.json ./
 RUN yarn install --frozen-lockfile -f

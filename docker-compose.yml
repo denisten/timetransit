@@ -15,7 +15,7 @@ services:
       - /etc/letsencrypt:/etc/letsencrypt:ro
     restart: always
     healthcheck:
-      test: [ "CMD", "curl", "-f", "http://localhost:8080/api/healthcheck" ]
+      test: [ "CMD", "wget", "-qO", "http://localhost:8080/api/healthcheck" ]
       interval: 30s
       timeout: 10s
       retries: 3

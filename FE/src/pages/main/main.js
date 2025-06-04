@@ -9,8 +9,9 @@ import { NumbersBlock } from "../../blocks/numbers-block";
 import { AdvantagesBlock } from "../../blocks/advantages-block";
 import { Partners } from "../../blocks/partners";
 import { Transportation } from "../../blocks/transportation";
-import {CertificateBlock} from "../../blocks/certificates-block/certificate";
-import {VersionLogger} from "../../components/version-logger/version-logger";
+import { CertificateBlock } from "../../blocks/certificates-block/certificate";
+import { VersionLogger } from "../../components/version-logger/version-logger";
+import BusinessTourBlock from "../../blocks/business-tour/business-tour";
 
 export const Main = () => {
   const isMobile = window.innerWidth < 480;
@@ -31,7 +32,8 @@ export const Main = () => {
         <AdvantagesBlock />
         <NumbersBlock />
         <Transportation />
-        <CertificateBlock/>
+        <BusinessTourBlock />
+        <CertificateBlock />
         <OfficeMap />
         <Partners />
       </div>

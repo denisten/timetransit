@@ -1,5 +1,8 @@
 :root {
     font-size: 16px; /* Базовый размер шрифта */
+    --primary-color: #c3202b;
+    --primary-black: #000;
+    --primary-white: #ffffff;
 }
 
 .App {

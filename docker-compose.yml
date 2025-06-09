@@ -1,6 +1,23 @@
 version: "3.8"
 
 services:
+  backend:
+    build:
+      context: ./BE
+    container_name: go_backend
+    env_file:
+      - .env
+    ports:
+      - "8080:8080"
+    networks:
+      - web_net
+    restart: always
+    healthcheck:
+      test: [ "CMD", "wget", "-qO", "http://localhost:8080/api/healthcheck" ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
   frontend:
     build:
       context: ./FE
@@ -19,6 +36,7 @@ services:
     ports:
       - "80:80"
     depends_on:
+      - backend
       - frontend
     networks:
       - web_net

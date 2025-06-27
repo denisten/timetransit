@@ -1,65 +1,42 @@
-version: "3.8"
-
 services:
-  backend:
-    build:
-      context: ./BE
-    container_name: go_backend
-    env_file:
-      - .env
-    ports:
-      - "8080:8080"
-    networks:
-      - web_net
-    restart: always
-    healthcheck:
-      test: [ "CMD", "wget", "-qO", "http://localhost:8080/api/healthcheck" ]
-      interval: 30s
-      timeout: 10s
-      retries: 3
-
-  frontend:
-    build:
-      context: ./FE
-    container_name: react_frontend
-    restart: always
-    networks:
-      - web_net
-    volumes:
-      - frontend_build:/usr/share/nginx/html
-
-  nginx:
+  nginx_proxy:
     image: nginx:stable-alpine
     container_name: nginx_proxy
-    volumes:
-      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
-      - certbot-etc:/etc/letsencrypt
-      - certbot-www:/var/www/certbot
-      - frontend_build:/usr/share/nginx/html
     ports:
       - "80:80"
       - "443:443"
-    depends_on:
-      - backend
-      - frontend
+    volumes:
+      - ./frontend_build:/usr/share/nginx/html:ro
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./letsencrypt:/etc/letsencrypt:ro          # сертификаты
+      - ./certbot-www:/var/www/certbot              # для проверки certbot
     networks:
       - web_net
+    depends_on:
+      - go_backend
+      - react_frontend
 
   certbot:
     image: certbot/certbot
     container_name: certbot
     volumes:
-      - certbot-etc:/etc/letsencrypt
-      - certbot-www:/var/www/certbot
-    entrypoint: >
-      certbot certonly --webroot --webroot-path=/var/www/certbot
-      --email denistendev@gmail.com --agree-tos --no-eff-email
-      -d timetransit.net -d www.timetransit.net
+      - ./letsencrypt:/etc/letsencrypt
+      - ./certbot-www:/var/www/certbot
+    entrypoint: /bin/sh -c
+    command: "trap exit TERM; while :; do certbot renew --webroot -w /var/www/certbot; sleep 12h & wait $${!}; done"
+    networks:
+      - web_net
 
-volumes:
-  certbot-etc:
-  certbot-www:
-  frontend_build:
+  go_backend:
+    # твоя конфигурация backend
+    networks:
+      - web_net
+
+  react_frontend:
+    # твоя конфигурация frontend
+    networks:
+      - web_net
 
 networks:
   web_net:
+    driver: bridge

@@ -53,17 +53,20 @@ services:
     volumes:
       - ./nginx/certs:/etc/letsencrypt
       - ./nginx/acme-challenge:/var/www/html
-    entrypoint: /bin/sh -c
     command: >
-      "trap exit TERM;
-       while :; do
-         certbot renew --webroot -w /var/www/html --deploy-hook 'docker compose restart nginx';
-         sleep 12h & wait $${!};
-       done"
+      /bin/sh -c "
+        certbot certonly --webroot -w /var/www/html \
+        -d timetransit.net -d www.timetransit.net \
+        --email denistendev@gmail.com --agree-tos --non-interactive || true;
+        trap exit TERM;
+        while :; do
+          certbot renew --webroot -w /var/www/html --deploy-hook 'docker compose restart nginx';
+          sleep 12h & wait $${!};
+        done"
     networks:
       - web_net
     restart: unless-stopped
-
+    
 networks:
   web_net:
     driver: bridge

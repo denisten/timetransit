@@ -1,5 +1,3 @@
-version: "3.8"
-
 services:
   go_backend:
     build:
@@ -55,18 +53,21 @@ services:
       - ./nginx/acme-challenge:/var/www/html
     command: >
       /bin/sh -c "
+      if [ ! -f /etc/letsencrypt/live/timetransit.net/fullchain.pem ]; then
         certbot certonly --webroot -w /var/www/html \
         -d timetransit.net -d www.timetransit.net \
-        --email denistendev@gmail.com --agree-tos --non-interactive || true;
-        trap exit TERM;
-        while :; do
-          certbot renew --webroot -w /var/www/html --deploy-hook 'docker compose restart nginx';
-          sleep 12h & wait $${!};
-        done"
+        --email denistendev@gmail.com --agree-tos --non-interactive;
+        docker compose restart nginx;
+      fi
+      trap exit TERM;
+      while :; do
+        certbot renew --webroot -w /var/www/html --deploy-hook 'docker compose restart nginx';
+        sleep 12h & wait $${!};
+      done"
     networks:
       - web_net
     restart: unless-stopped
-    
+
 networks:
   web_net:
     driver: bridge
